@@ -159,6 +159,21 @@ class LoginViewController: UIViewController {
     }
     
     private func loginUser() {
+        FirebaseUserListener.shared.loginUserWithEmail(email: emailTextField.text!, password: passwordTextField.text!) { (error, isEmailVerified) in
+            
+            if error == nil {
+                if isEmailVerified {
+                    self.goToApp()
+                    //print("User has logged in with email", User.currentUser?.email)
+                }else {
+                    self.view.makeToast("Please verify email.", duration: 2, position: .bottom)
+                    self.resendEmailButtonOutlet.isHidden = false
+                }
+            }else {
+                self.view.makeToast(error?.localizedDescription)
+            }
+            
+        }
         
     }
     
@@ -178,6 +193,12 @@ class LoginViewController: UIViewController {
         }else {
             view.makeToast("The password don't match", duration: 3, position: .center)
         }
+    }
+    
+    
+    //MARK: - Navigation
+    private func goToApp(){
+        
     }
 
 }
