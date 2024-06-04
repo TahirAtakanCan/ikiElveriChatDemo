@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import ProgressHUD
+import Toast
 
 class LoginViewController: UIViewController {
 
@@ -47,16 +49,39 @@ class LoginViewController: UIViewController {
         
         setupTextFieldDelegates()
         updateIUFor(login: true)
+        setupBackroundTap()
     }
     
     //MARK: - IBActions
     @IBAction func loginButtonPressed(_ sender: Any) {
+        
+        if isDataInputedFor(type: isLogin ? "Login" : "Register"){
+            //login or register
+            print("have data for login/reg")
+        }else {
+            view.makeToast("All Fields are required", duration: 3, position: .center)
+        }
     }
     
     @IBAction func forgetPasswordButtonPressed(_ sender: Any) {
+        
+        if isDataInputedFor(type: "password"){
+            //reset password
+            print("have data forget password ")
+        }else {
+            view.makeToast("All Fields are required", duration: 3, position: .center)
+        }
+        
     }
     
     @IBAction func resendEmailButtonPressed(_ sender: Any) {
+        
+        if isDataInputedFor(type: "password"){
+            //resend Verification email
+            print("have data forget resend email")
+        }else {
+            view.makeToast("All Fields are required", duration: 3, position: .center)
+        }
     }
     
     @IBAction func signUpButtonPressed(_ sender: UIButton) {
@@ -76,6 +101,17 @@ class LoginViewController: UIViewController {
     @objc func textFieldDidChange(_ textField: UITextField) {
         //print("tapped")
         updatePlaceholderLabels(textField: textField)
+    }
+    
+    
+    private func setupBackroundTap() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(backroundTap))
+        view.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc func backroundTap() {
+        //print("backround Tap")
+        view.endEditing(false)
     }
     
     //MARK: - Animations
@@ -104,6 +140,21 @@ class LoginViewController: UIViewController {
         default:
             repeatPasswordLabel.text = textField.hasText ? "Password" : ""
         }
+    }
+    
+    
+    //MARK: - Helpers
+    private func isDataInputedFor(type: String) -> Bool {
+        
+        switch type {
+        case "login":
+            return emailTextField.text != "" && passwordTextField.text != ""
+        case "registration":
+            return emailTextField.text != "" && passwordTextField.text != "" && repeatPasswordTextField.text != ""
+        default:
+            return emailTextField.text != ""
+        }
+        
     }
 
 }

@@ -25,6 +25,7 @@
 		FB7EF44A2C0E041B009EDC5D /* MessageKit in Frameworks */ = {isa = PBXBuildFile; productRef = FB7EF4492C0E041B009EDC5D /* MessageKit */; };
 		FB7EF44D2C0E0450009EDC5D /* InputBarAccessoryView in Frameworks */ = {isa = PBXBuildFile; productRef = FB7EF44C2C0E0450009EDC5D /* InputBarAccessoryView */; };
 		FB7EF4512C0E07B1009EDC5D /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FB7EF4502C0E07B1009EDC5D /* RealmSwift */; };
+		FBBD21FA2C0F1C3E00DE96D1 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = FBBD21F92C0F1C3E00DE96D1 /* Toast */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBBD21FA2C0F1C3E00DE96D1 /* Toast in Frameworks */,
 				FB7EF4372C0E0282009EDC5D /* FirebaseAnalytics in Frameworks */,
 				FB7EF44D2C0E0450009EDC5D /* InputBarAccessoryView in Frameworks */,
 				FB7EF4442C0E02ED009EDC5D /* ProgressHUD in Frameworks */,
@@ -120,6 +122,7 @@
 				FB7EF4492C0E041B009EDC5D /* MessageKit */,
 				FB7EF44C2C0E0450009EDC5D /* InputBarAccessoryView */,
 				FB7EF4502C0E07B1009EDC5D /* RealmSwift */,
+				FBBD21F92C0F1C3E00DE96D1 /* Toast */,
 			);
 			productName = ikiElveriChatDemo;
 			productReference = FB7EF40A2C0DF20A009EDC5D /* ikiElveriChatDemo.app */;
@@ -156,6 +159,7 @@
 				FB7EF4482C0E041B009EDC5D /* XCRemoteSwiftPackageReference "MessageKit" */,
 				FB7EF44B2C0E0450009EDC5D /* XCRemoteSwiftPackageReference "InputBarAccessoryView" */,
 				FB7EF44F2C0E07B1009EDC5D /* XCRemoteSwiftPackageReference "realm-swift" */,
+				FBBD21F82C0F1C3E00DE96D1 /* XCRemoteSwiftPackageReference "Toast-Swift" */,
 			);
 			productRefGroup = FB7EF40B2C0DF20A009EDC5D /* Products */;
 			projectDirPath = "";
@@ -460,6 +464,14 @@
 				minimumVersion = 10.50.1;
 			};
 		};
+		FBBD21F82C0F1C3E00DE96D1 /* XCRemoteSwiftPackageReference "Toast-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scalessec/Toast-Swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -517,6 +529,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FB7EF44F2C0E07B1009EDC5D /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
+		};
+		FBBD21F92C0F1C3E00DE96D1 /* Toast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FBBD21F82C0F1C3E00DE96D1 /* XCRemoteSwiftPackageReference "Toast-Swift" */;
+			productName = Toast;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
