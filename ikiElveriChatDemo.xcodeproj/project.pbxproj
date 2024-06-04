@@ -26,6 +26,8 @@
 		FB7EF44D2C0E0450009EDC5D /* InputBarAccessoryView in Frameworks */ = {isa = PBXBuildFile; productRef = FB7EF44C2C0E0450009EDC5D /* InputBarAccessoryView */; };
 		FB7EF4512C0E07B1009EDC5D /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FB7EF4502C0E07B1009EDC5D /* RealmSwift */; };
 		FBBD21FA2C0F1C3E00DE96D1 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = FBBD21F92C0F1C3E00DE96D1 /* Toast */; };
+		FBBD21FD2C0F202100DE96D1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBD21FC2C0F202100DE96D1 /* User.swift */; };
+		FBBD21FF2C0F244200DE96D1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBD21FE2C0F244200DE96D1 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		FB7EF4192C0DF20C009EDC5D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FB7EF41B2C0DF20C009EDC5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FB7EF4212C0DF230009EDC5D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FBBD21FC2C0F202100DE96D1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		FBBD21FE2C0F244200DE96D1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +86,7 @@
 		FB7EF40C2C0DF20A009EDC5D /* ikiElveriChatDemo */ = {
 			isa = PBXGroup;
 			children = (
+				FBBD21FB2C0F200E00DE96D1 /* Models */,
 				FB7EF40D2C0DF20A009EDC5D /* AppDelegate.swift */,
 				FB7EF40F2C0DF20A009EDC5D /* SceneDelegate.swift */,
 				FB7EF4112C0DF20A009EDC5D /* LoginViewController.swift */,
@@ -90,8 +95,17 @@
 				FB7EF4182C0DF20C009EDC5D /* LaunchScreen.storyboard */,
 				FB7EF41B2C0DF20C009EDC5D /* Info.plist */,
 				FB7EF4212C0DF230009EDC5D /* GoogleService-Info.plist */,
+				FBBD21FE2C0F244200DE96D1 /* Constants.swift */,
 			);
 			path = ikiElveriChatDemo;
+			sourceTree = "<group>";
+		};
+		FBBD21FB2C0F200E00DE96D1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FBBD21FC2C0F202100DE96D1 /* User.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -189,6 +203,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBBD21FF2C0F244200DE96D1 /* Constants.swift in Sources */,
+				FBBD21FD2C0F202100DE96D1 /* User.swift in Sources */,
 				FB7EF4122C0DF20A009EDC5D /* LoginViewController.swift in Sources */,
 				FB7EF40E2C0DF20A009EDC5D /* AppDelegate.swift in Sources */,
 				FB7EF4102C0DF20A009EDC5D /* SceneDelegate.swift in Sources */,
