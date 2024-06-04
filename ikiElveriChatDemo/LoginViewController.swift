@@ -67,8 +67,7 @@ class LoginViewController: UIViewController {
     @IBAction func forgetPasswordButtonPressed(_ sender: Any) {
         
         if isDataInputedFor(type: "password"){
-            //reset password
-            print("have data forget password ")
+          resetPassword()
         }else {
             view.makeToast("All Fields are required", duration: 3, position: .center)
         }
@@ -78,8 +77,7 @@ class LoginViewController: UIViewController {
     @IBAction func resendEmailButtonPressed(_ sender: Any) {
         
         if isDataInputedFor(type: "password"){
-            //resend Verification email
-            print("have data forget resend email")
+            resendVerificationEmail()
         }else {
             view.makeToast("All Fields are required", duration: 3, position: .center)
         }
@@ -195,6 +193,32 @@ class LoginViewController: UIViewController {
         }
     }
     
+    
+    private func resetPassword(){
+        
+        FirebaseUserListener.shared.resetPasswordFor(email: emailTextField.text!) { (error) in
+            
+            if error == nil {
+                self.view.makeToast("Resent link sent to email", duration: 2, position: .bottom)
+            }else {
+                //again
+                self.view.makeToast(error?.localizedDescription)
+            }
+            
+        }
+        
+    }
+    
+    private func resendVerificationEmail() {
+        FirebaseUserListener.shared.resendVerificationEmail(email: emailTextField.text!) { (error) in
+            if error == nil {
+                self.view.makeToast("New Verification email sent.", duration: 2, position: .bottom)
+            }else {
+                //again
+                self.view.makeToast(error?.localizedDescription)
+            }
+        }
+    }
     
     //MARK: - Navigation
     private func goToApp(){
