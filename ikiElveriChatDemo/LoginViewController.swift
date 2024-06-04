@@ -57,7 +57,8 @@ class LoginViewController: UIViewController {
         
         if isDataInputedFor(type: isLogin ? "Login" : "Register"){
             //login or register
-            print("have data for login/reg")
+            //print("have data for login/reg")
+            isLogin ? loginUser(): registerUser()
         }else {
             view.makeToast("All Fields are required", duration: 3, position: .center)
         }
@@ -155,6 +156,28 @@ class LoginViewController: UIViewController {
             return emailTextField.text != ""
         }
         
+    }
+    
+    private func loginUser() {
+        
+    }
+    
+    private func registerUser() {
+        
+        if passwordTextField.text! == repeatPasswordTextField.text! {
+            
+            FirebaseUserListener.shared.registerUserWith(email: emailTextField.text!, password: passwordTextField.text!) { (error) in
+                if error == nil {
+                    self.view.makeToast("Verification email sent", duration: 2, position: .bottom)
+                    self.resendEmailButtonOutlet.isHidden = false
+                }else {
+                    self.view.makeToast(error!.localizedDescription, duration: 1, position: .bottom)
+                }
+            }
+            
+        }else {
+            view.makeToast("The password don't match", duration: 3, position: .center)
+        }
     }
 
 }
