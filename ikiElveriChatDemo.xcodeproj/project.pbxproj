@@ -28,6 +28,8 @@
 		FBBD21FA2C0F1C3E00DE96D1 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = FBBD21F92C0F1C3E00DE96D1 /* Toast */; };
 		FBBD21FD2C0F202100DE96D1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBD21FC2C0F202100DE96D1 /* User.swift */; };
 		FBBD21FF2C0F244200DE96D1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBD21FE2C0F244200DE96D1 /* Constants.swift */; };
+		FBBD22012C0F29AB00DE96D1 /* FCollectionReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBD22002C0F29AB00DE96D1 /* FCollectionReference.swift */; };
+		FBBD22042C0F342300DE96D1 /* FirebaseUserListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBD22032C0F342300DE96D1 /* FirebaseUserListener.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		FB7EF4212C0DF230009EDC5D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FBBD21FC2C0F202100DE96D1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FBBD21FE2C0F244200DE96D1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		FBBD22002C0F29AB00DE96D1 /* FCollectionReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCollectionReference.swift; sourceTree = "<group>"; };
+		FBBD22032C0F342300DE96D1 /* FirebaseUserListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUserListener.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +90,7 @@
 		FB7EF40C2C0DF20A009EDC5D /* ikiElveriChatDemo */ = {
 			isa = PBXGroup;
 			children = (
+				FBBD22022C0F33D600DE96D1 /* FirebaseHelpers */,
 				FBBD21FB2C0F200E00DE96D1 /* Models */,
 				FB7EF40D2C0DF20A009EDC5D /* AppDelegate.swift */,
 				FB7EF40F2C0DF20A009EDC5D /* SceneDelegate.swift */,
@@ -106,6 +111,15 @@
 				FBBD21FC2C0F202100DE96D1 /* User.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		FBBD22022C0F33D600DE96D1 /* FirebaseHelpers */ = {
+			isa = PBXGroup;
+			children = (
+				FBBD22002C0F29AB00DE96D1 /* FCollectionReference.swift */,
+				FBBD22032C0F342300DE96D1 /* FirebaseUserListener.swift */,
+			);
+			path = FirebaseHelpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,10 +217,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBBD22012C0F29AB00DE96D1 /* FCollectionReference.swift in Sources */,
 				FBBD21FF2C0F244200DE96D1 /* Constants.swift in Sources */,
 				FBBD21FD2C0F202100DE96D1 /* User.swift in Sources */,
 				FB7EF4122C0DF20A009EDC5D /* LoginViewController.swift in Sources */,
 				FB7EF40E2C0DF20A009EDC5D /* AppDelegate.swift in Sources */,
+				FBBD22042C0F342300DE96D1 /* FirebaseUserListener.swift in Sources */,
 				FB7EF4102C0DF20A009EDC5D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
