@@ -15,7 +15,7 @@ class SettingsTableViewController: UITableViewController {
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var avatarImageView: UIImageView!
-    
+    @IBOutlet weak var appVerisonLabel: UILabel!
     
     //MARK: - View LifeCycle
     override func viewDidLoad() {
@@ -31,6 +31,18 @@ class SettingsTableViewController: UITableViewController {
         showUserInfo()
     }
     
+    
+    //MARK: - TableView Delegates
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView()
+        headerView.backgroundColor = UIColor(named: "tableviewBackgroundColor")
+        
+        return headerView
+    }
+    //Düzenleme
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return section == 0 ? 0.0 : 5.0
+    }
     
     //MARK: - IBActions
     
@@ -51,6 +63,7 @@ class SettingsTableViewController: UITableViewController {
         if let user = User.currentUser {
             usernameLabel.text = user.username
             statusLabel.text = user.status
+            appVerisonLabel.text = "App Version \(Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "")"
             
             if user.avatarLink != "" {
                 //download avatar
