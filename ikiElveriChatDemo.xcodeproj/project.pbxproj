@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB094AE42C10FBBD00DD5923 /* EditProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB094AE32C10FBBD00DD5923 /* EditProfileTableViewController.swift */; };
 		FB7EF40E2C0DF20A009EDC5D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7EF40D2C0DF20A009EDC5D /* AppDelegate.swift */; };
 		FB7EF4102C0DF20A009EDC5D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7EF40F2C0DF20A009EDC5D /* SceneDelegate.swift */; };
 		FB7EF4122C0DF20A009EDC5D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7EF4112C0DF20A009EDC5D /* LoginViewController.swift */; };
@@ -34,6 +35,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FB094AE32C10FBBD00DD5923 /* EditProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileTableViewController.swift; sourceTree = "<group>"; };
 		FB7EF40A2C0DF20A009EDC5D /* ikiElveriChatDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ikiElveriChatDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB7EF40D2C0DF20A009EDC5D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB7EF40F2C0DF20A009EDC5D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 				FB7EF4212C0DF230009EDC5D /* GoogleService-Info.plist */,
 				FBBD21FE2C0F244200DE96D1 /* Constants.swift */,
 				FBCBBAB52C1049D100C1406A /* SettingsTableViewController.swift */,
+				FB094AE32C10FBBD00DD5923 /* EditProfileTableViewController.swift */,
 			);
 			path = ikiElveriChatDemo;
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 				FBBD21FD2C0F202100DE96D1 /* User.swift in Sources */,
 				FB7EF4122C0DF20A009EDC5D /* LoginViewController.swift in Sources */,
 				FBCBBAB62C1049D100C1406A /* SettingsTableViewController.swift in Sources */,
+				FB094AE42C10FBBD00DD5923 /* EditProfileTableViewController.swift in Sources */,
 				FB7EF40E2C0DF20A009EDC5D /* AppDelegate.swift in Sources */,
 				FBBD22042C0F342300DE96D1 /* FirebaseUserListener.swift in Sources */,
 				FB7EF4102C0DF20A009EDC5D /* SceneDelegate.swift in Sources */,
