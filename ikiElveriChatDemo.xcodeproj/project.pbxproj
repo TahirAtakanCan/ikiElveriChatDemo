@@ -30,6 +30,7 @@
 		FBBD21FF2C0F244200DE96D1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBD21FE2C0F244200DE96D1 /* Constants.swift */; };
 		FBBD22012C0F29AB00DE96D1 /* FCollectionReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBD22002C0F29AB00DE96D1 /* FCollectionReference.swift */; };
 		FBBD22042C0F342300DE96D1 /* FirebaseUserListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBD22032C0F342300DE96D1 /* FirebaseUserListener.swift */; };
+		FBCBBAB62C1049D100C1406A /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCBBAB52C1049D100C1406A /* SettingsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		FBBD21FE2C0F244200DE96D1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		FBBD22002C0F29AB00DE96D1 /* FCollectionReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCollectionReference.swift; sourceTree = "<group>"; };
 		FBBD22032C0F342300DE96D1 /* FirebaseUserListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUserListener.swift; sourceTree = "<group>"; };
+		FBCBBAB52C1049D100C1406A /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 				FB7EF41B2C0DF20C009EDC5D /* Info.plist */,
 				FB7EF4212C0DF230009EDC5D /* GoogleService-Info.plist */,
 				FBBD21FE2C0F244200DE96D1 /* Constants.swift */,
+				FBCBBAB52C1049D100C1406A /* SettingsTableViewController.swift */,
 			);
 			path = ikiElveriChatDemo;
 			sourceTree = "<group>";
@@ -221,6 +224,7 @@
 				FBBD21FF2C0F244200DE96D1 /* Constants.swift in Sources */,
 				FBBD21FD2C0F202100DE96D1 /* User.swift in Sources */,
 				FB7EF4122C0DF20A009EDC5D /* LoginViewController.swift in Sources */,
+				FBCBBAB62C1049D100C1406A /* SettingsTableViewController.swift in Sources */,
 				FB7EF40E2C0DF20A009EDC5D /* AppDelegate.swift in Sources */,
 				FBBD22042C0F342300DE96D1 /* FirebaseUserListener.swift in Sources */,
 				FB7EF4102C0DF20A009EDC5D /* SceneDelegate.swift in Sources */,
