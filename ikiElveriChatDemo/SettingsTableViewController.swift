@@ -53,7 +53,20 @@ class SettingsTableViewController: UITableViewController {
         print("show t&C")
     }
     @IBAction func logOutButtonPressed(_ sender: Any) {
-        print("log Out")
+        //print("log Out")
+        
+        FirebaseUserListener.shared.logOutCurrentUser {(error ) in
+            
+            if error == nil {
+                
+                let loginView = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "loginView")
+                
+                DispatchQueue.main.async {
+                    loginView.modalPresentationStyle = .fullScreen
+                    self.present(loginView,animated: true,completion: nil)
+                }
+            }
+        }
     }
     
 
