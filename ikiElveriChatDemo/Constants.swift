@@ -9,5 +9,6 @@ import Foundation
 
 
 let userDefaults = UserDefaults.standard
+public let kFILEREFERANCE = "gs://ikielverichatdemo.appspot.com"
 
 public let kCURRENTUSER = "currentUser"

@@ -102,8 +102,20 @@ class EditProfileTableViewController: UITableViewController {
     }
     
     private func uploadAvatarImage(_ image: UIImage) {
-            // Avatar yükleme işlemleri burada yapılacak
-            // Örneğin, Firebase'e yükleme kodu burada olabilir
+            
+        let fileDictionary = "Avatars/" + "_\(User.currentId)" + ".jpg"
+        
+        FileStorage.uploadImage(image, directory: fileDictionary) { (avatarLink) in
+            
+            if var user = User.currentUser {
+                user.avatarLink = avatarLink ?? ""
+                saveUserLocally(user)
+                FirebaseUserListener.shared.saveUserToFireStore(user
+                )
+            }
+            
+        }
+        
             print("Uploading avatar image...")
     }
     
