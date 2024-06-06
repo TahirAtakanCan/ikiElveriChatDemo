@@ -36,6 +36,8 @@
 		FBBD22042C0F342300DE96D1 /* FirebaseUserListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBD22032C0F342300DE96D1 /* FirebaseUserListener.swift */; };
 		FBCBBAB62C1049D100C1406A /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCBBAB52C1049D100C1406A /* SettingsTableViewController.swift */; };
 		FBDFF35B2C123DDF00D82522 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDFF35A2C123DDF00D82522 /* Extensions.swift */; };
+		FBDFF35D2C12408900D82522 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDFF35C2C12408900D82522 /* Status.swift */; };
+		FBDFF35F2C12435100D82522 /* StatusTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDFF35E2C12435100D82522 /* StatusTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +59,8 @@
 		FBBD22032C0F342300DE96D1 /* FirebaseUserListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUserListener.swift; sourceTree = "<group>"; };
 		FBCBBAB52C1049D100C1406A /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		FBDFF35A2C123DDF00D82522 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		FBDFF35C2C12408900D82522 /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
+		FBDFF35E2C12435100D82522 /* StatusTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +129,7 @@
 				FB7EF4212C0DF230009EDC5D /* GoogleService-Info.plist */,
 				FBCBBAB52C1049D100C1406A /* SettingsTableViewController.swift */,
 				FB094AE32C10FBBD00DD5923 /* EditProfileTableViewController.swift */,
+				FBDFF35E2C12435100D82522 /* StatusTableViewController.swift */,
 			);
 			path = ikiElveriChatDemo;
 			sourceTree = "<group>";
@@ -133,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				FBBD21FC2C0F202100DE96D1 /* User.swift */,
+				FBDFF35C2C12408900D82522 /* Status.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -253,6 +259,8 @@
 				FBCBBAB62C1049D100C1406A /* SettingsTableViewController.swift in Sources */,
 				FBDFF35B2C123DDF00D82522 /* Extensions.swift in Sources */,
 				FB094AE42C10FBBD00DD5923 /* EditProfileTableViewController.swift in Sources */,
+				FBDFF35F2C12435100D82522 /* StatusTableViewController.swift in Sources */,
+				FBDFF35D2C12408900D82522 /* Status.swift in Sources */,
 				FB7EF40E2C0DF20A009EDC5D /* AppDelegate.swift in Sources */,
 				FBBD22042C0F342300DE96D1 /* FirebaseUserListener.swift in Sources */,
 				FB7EF4102C0DF20A009EDC5D /* SceneDelegate.swift in Sources */,
