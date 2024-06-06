@@ -10,6 +10,7 @@
 		FB094AE42C10FBBD00DD5923 /* EditProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB094AE32C10FBBD00DD5923 /* EditProfileTableViewController.swift */; };
 		FB094AE72C11063600DD5923 /* YPImagePicker in Frameworks */ = {isa = PBXBuildFile; productRef = FB094AE62C11063600DD5923 /* YPImagePicker */; };
 		FB094AEA2C11D02400DD5923 /* FileStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB094AE92C11D02400DD5923 /* FileStorage.swift */; };
+		FB094AED2C11F67800DD5923 /* GlobalFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB094AEC2C11F67800DD5923 /* GlobalFunctions.swift */; };
 		FB7EF40E2C0DF20A009EDC5D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7EF40D2C0DF20A009EDC5D /* AppDelegate.swift */; };
 		FB7EF4102C0DF20A009EDC5D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7EF40F2C0DF20A009EDC5D /* SceneDelegate.swift */; };
 		FB7EF4122C0DF20A009EDC5D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7EF4112C0DF20A009EDC5D /* LoginViewController.swift */; };
@@ -39,6 +40,7 @@
 /* Begin PBXFileReference section */
 		FB094AE32C10FBBD00DD5923 /* EditProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileTableViewController.swift; sourceTree = "<group>"; };
 		FB094AE92C11D02400DD5923 /* FileStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileStorage.swift; sourceTree = "<group>"; };
+		FB094AEC2C11F67800DD5923 /* GlobalFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalFunctions.swift; sourceTree = "<group>"; };
 		FB7EF40A2C0DF20A009EDC5D /* ikiElveriChatDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ikiElveriChatDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB7EF40D2C0DF20A009EDC5D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB7EF40F2C0DF20A009EDC5D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +81,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FB094AEB2C11F65F00DD5923 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				FBBD21FE2C0F244200DE96D1 /* Constants.swift */,
+				FB094AEC2C11F67800DD5923 /* GlobalFunctions.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		FB7EF4012C0DF20A009EDC5D = {
 			isa = PBXGroup;
 			children = (
@@ -98,6 +109,7 @@
 		FB7EF40C2C0DF20A009EDC5D /* ikiElveriChatDemo */ = {
 			isa = PBXGroup;
 			children = (
+				FB094AEB2C11F65F00DD5923 /* Helpers */,
 				FBBD22022C0F33D600DE96D1 /* FirebaseHelpers */,
 				FBBD21FB2C0F200E00DE96D1 /* Models */,
 				FB7EF40D2C0DF20A009EDC5D /* AppDelegate.swift */,
@@ -108,7 +120,6 @@
 				FB7EF4182C0DF20C009EDC5D /* LaunchScreen.storyboard */,
 				FB7EF41B2C0DF20C009EDC5D /* Info.plist */,
 				FB7EF4212C0DF230009EDC5D /* GoogleService-Info.plist */,
-				FBBD21FE2C0F244200DE96D1 /* Constants.swift */,
 				FBCBBAB52C1049D100C1406A /* SettingsTableViewController.swift */,
 				FB094AE32C10FBBD00DD5923 /* EditProfileTableViewController.swift */,
 			);
@@ -230,6 +241,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB094AED2C11F67800DD5923 /* GlobalFunctions.swift in Sources */,
 				FBBD22012C0F29AB00DE96D1 /* FCollectionReference.swift in Sources */,
 				FB094AEA2C11D02400DD5923 /* FileStorage.swift in Sources */,
 				FBBD21FF2C0F244200DE96D1 /* Constants.swift in Sources */,
