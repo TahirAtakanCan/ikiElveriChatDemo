@@ -88,6 +88,9 @@ class SettingsTableViewController: UITableViewController {
             
             if user.avatarLink != "" {
                 //download avatar
+                FileStorage.downloadImage(imageUrl: user.avatarLink) { (avatarImage) in
+                    
+                }
             }
         }
         

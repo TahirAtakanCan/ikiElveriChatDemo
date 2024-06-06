@@ -110,9 +110,9 @@ class EditProfileTableViewController: UITableViewController {
             if var user = User.currentUser {
                 user.avatarLink = avatarLink ?? ""
                 saveUserLocally(user)
-                FirebaseUserListener.shared.saveUserToFireStore(user
-                )
+                FirebaseUserListener.shared.saveUserToFireStore(user)
             }
+            FileStorage.saveFileLocally(fileData: image.jpegData(compressionQuality: 1.0)! as NSData, fileName: User.currentId)
             
         }
         
