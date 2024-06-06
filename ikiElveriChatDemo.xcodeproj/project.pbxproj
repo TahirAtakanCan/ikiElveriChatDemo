@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		FB094AE42C10FBBD00DD5923 /* EditProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB094AE32C10FBBD00DD5923 /* EditProfileTableViewController.swift */; };
+		FB094AE72C11063600DD5923 /* YPImagePicker in Frameworks */ = {isa = PBXBuildFile; productRef = FB094AE62C11063600DD5923 /* YPImagePicker */; };
+		FB094AEA2C11D02400DD5923 /* FileStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB094AE92C11D02400DD5923 /* FileStorage.swift */; };
 		FB7EF40E2C0DF20A009EDC5D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7EF40D2C0DF20A009EDC5D /* AppDelegate.swift */; };
 		FB7EF4102C0DF20A009EDC5D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7EF40F2C0DF20A009EDC5D /* SceneDelegate.swift */; };
 		FB7EF4122C0DF20A009EDC5D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7EF4112C0DF20A009EDC5D /* LoginViewController.swift */; };
@@ -36,6 +38,7 @@
 
 /* Begin PBXFileReference section */
 		FB094AE32C10FBBD00DD5923 /* EditProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileTableViewController.swift; sourceTree = "<group>"; };
+		FB094AE92C11D02400DD5923 /* FileStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileStorage.swift; sourceTree = "<group>"; };
 		FB7EF40A2C0DF20A009EDC5D /* ikiElveriChatDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ikiElveriChatDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB7EF40D2C0DF20A009EDC5D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB7EF40F2C0DF20A009EDC5D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +68,7 @@
 				FB7EF44A2C0E041B009EDC5D /* MessageKit in Frameworks */,
 				FB7EF4392C0E0282009EDC5D /* FirebaseAuth in Frameworks */,
 				FB7EF43F2C0E0282009EDC5D /* FirebaseMessaging in Frameworks */,
+				FB094AE72C11063600DD5923 /* YPImagePicker in Frameworks */,
 				FB7EF43B2C0E0282009EDC5D /* FirebaseFirestore in Frameworks */,
 				FB7EF4512C0E07B1009EDC5D /* RealmSwift in Frameworks */,
 				FB7EF43D2C0E0282009EDC5D /* FirebaseFirestoreSwift in Frameworks */,
@@ -124,6 +128,7 @@
 			children = (
 				FBBD22002C0F29AB00DE96D1 /* FCollectionReference.swift */,
 				FBBD22032C0F342300DE96D1 /* FirebaseUserListener.swift */,
+				FB094AE92C11D02400DD5923 /* FileStorage.swift */,
 			);
 			path = FirebaseHelpers;
 			sourceTree = "<group>";
@@ -157,6 +162,7 @@
 				FB7EF44C2C0E0450009EDC5D /* InputBarAccessoryView */,
 				FB7EF4502C0E07B1009EDC5D /* RealmSwift */,
 				FBBD21F92C0F1C3E00DE96D1 /* Toast */,
+				FB094AE62C11063600DD5923 /* YPImagePicker */,
 			);
 			productName = ikiElveriChatDemo;
 			productReference = FB7EF40A2C0DF20A009EDC5D /* ikiElveriChatDemo.app */;
@@ -194,6 +200,7 @@
 				FB7EF44B2C0E0450009EDC5D /* XCRemoteSwiftPackageReference "InputBarAccessoryView" */,
 				FB7EF44F2C0E07B1009EDC5D /* XCRemoteSwiftPackageReference "realm-swift" */,
 				FBBD21F82C0F1C3E00DE96D1 /* XCRemoteSwiftPackageReference "Toast-Swift" */,
+				FB094AE52C11063600DD5923 /* XCRemoteSwiftPackageReference "YPImagePicker" */,
 			);
 			productRefGroup = FB7EF40B2C0DF20A009EDC5D /* Products */;
 			projectDirPath = "";
@@ -224,6 +231,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FBBD22012C0F29AB00DE96D1 /* FCollectionReference.swift in Sources */,
+				FB094AEA2C11D02400DD5923 /* FileStorage.swift in Sources */,
 				FBBD21FF2C0F244200DE96D1 /* Constants.swift in Sources */,
 				FBBD21FD2C0F202100DE96D1 /* User.swift in Sources */,
 				FB7EF4122C0DF20A009EDC5D /* LoginViewController.swift in Sources */,
@@ -386,6 +394,9 @@
 				DEVELOPMENT_TEAM = AAS9DNLG6G;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ikiElveriChatDemo/Info.plist;
+				INFOPLIST_KEY_NSAppleMusicUsageDescription = "$(PRODUCT_NAME) would you like to use your media library";
+				INFOPLIST_KEY_NSCameraUsageDescription = "$(PRODUCT_NAME) would you like to use your camera";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "$(PRODUCT_NAME) would you like to use your photo library";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -414,6 +425,9 @@
 				DEVELOPMENT_TEAM = AAS9DNLG6G;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ikiElveriChatDemo/Info.plist;
+				INFOPLIST_KEY_NSAppleMusicUsageDescription = "$(PRODUCT_NAME) would you like to use your media library";
+				INFOPLIST_KEY_NSCameraUsageDescription = "$(PRODUCT_NAME) would you like to use your camera";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "$(PRODUCT_NAME) would you like to use your photo library";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -456,6 +470,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		FB094AE52C11063600DD5923 /* XCRemoteSwiftPackageReference "YPImagePicker" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Yummypets/YPImagePicker.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.2.2;
+			};
+		};
 		FB7EF4352C0E0282009EDC5D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
@@ -515,6 +537,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		FB094AE62C11063600DD5923 /* YPImagePicker */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FB094AE52C11063600DD5923 /* XCRemoteSwiftPackageReference "YPImagePicker" */;
+			productName = YPImagePicker;
+		};
 		FB7EF4362C0E0282009EDC5D /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = FB7EF4352C0E0282009EDC5D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
