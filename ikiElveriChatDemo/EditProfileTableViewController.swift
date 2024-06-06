@@ -26,6 +26,7 @@ class EditProfileTableViewController: UITableViewController {
         super.viewDidLoad()
         
         tableView.tableFooterView = UIView()
+        configureTextField()
         
     }
     
@@ -33,7 +34,6 @@ class EditProfileTableViewController: UITableViewController {
         super.viewDidAppear(animated)
         
         showUserInfo()
-        configureTextField()
     }
     
     
@@ -70,7 +70,7 @@ class EditProfileTableViewController: UITableViewController {
             if user.avatarLink != "" {
                 //set avatar
                 FileStorage.downloadImage(imageUrl: user.avatarLink) { (avatarImage) in
-                    self.avatarImageView.image = avatarImage
+                    self.avatarImageView.image = avatarImage?.circleMasked
                 }
             }
         }
@@ -145,21 +145,5 @@ extension EditProfileTableViewController: UITextFieldDelegate {
     
 }
 
-extension UIImage {
-    var circleMasked: UIImage? {
-        let square = CGSize(width: min(size.width, size.height), height: min(size.width, size.height))
-        let imageView = UIImageView(frame: CGRect(origin: .zero, size: square))
-        imageView.contentMode = .scaleAspectFill
-        imageView.image = self
-        imageView.layer.cornerRadius = square.width / 2
-        imageView.layer.masksToBounds = true
-        UIGraphicsBeginImageContextWithOptions(imageView.bounds.size, false, scale)
-        guard let context = UIGraphicsGetCurrentContext() else { return nil }
-        imageView.layer.render(in: context)
-        let result = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        return result
-    }
-}
 
 
