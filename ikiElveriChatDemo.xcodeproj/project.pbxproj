@@ -29,6 +29,7 @@
 		FB7EF44A2C0E041B009EDC5D /* MessageKit in Frameworks */ = {isa = PBXBuildFile; productRef = FB7EF4492C0E041B009EDC5D /* MessageKit */; };
 		FB7EF44D2C0E0450009EDC5D /* InputBarAccessoryView in Frameworks */ = {isa = PBXBuildFile; productRef = FB7EF44C2C0E0450009EDC5D /* InputBarAccessoryView */; };
 		FB7EF4512C0E07B1009EDC5D /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FB7EF4502C0E07B1009EDC5D /* RealmSwift */; };
+		FBA262BF2C133100009E47DA /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA262BE2C133100009E47DA /* ProfileTableViewController.swift */; };
 		FBBD21FA2C0F1C3E00DE96D1 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = FBBD21F92C0F1C3E00DE96D1 /* Toast */; };
 		FBBD21FD2C0F202100DE96D1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBD21FC2C0F202100DE96D1 /* User.swift */; };
 		FBBD21FF2C0F244200DE96D1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBD21FE2C0F244200DE96D1 /* Constants.swift */; };
@@ -55,6 +56,7 @@
 		FB7EF4192C0DF20C009EDC5D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FB7EF41B2C0DF20C009EDC5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FB7EF4212C0DF230009EDC5D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FBA262BE2C133100009E47DA /* ProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
 		FBBD21FC2C0F202100DE96D1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FBBD21FE2C0F244200DE96D1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		FBBD22002C0F29AB00DE96D1 /* FCollectionReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCollectionReference.swift; sourceTree = "<group>"; };
@@ -120,24 +122,65 @@
 		FB7EF40C2C0DF20A009EDC5D /* ikiElveriChatDemo */ = {
 			isa = PBXGroup;
 			children = (
+				FBA262BD2C1330DC009E47DA /* SecondaryView */,
 				FB094AEB2C11F65F00DD5923 /* Helpers */,
 				FBBD22022C0F33D600DE96D1 /* FirebaseHelpers */,
 				FBBD21FB2C0F200E00DE96D1 /* Models */,
 				FB7EF40D2C0DF20A009EDC5D /* AppDelegate.swift */,
 				FB7EF40F2C0DF20A009EDC5D /* SceneDelegate.swift */,
-				FB7EF4112C0DF20A009EDC5D /* LoginViewController.swift */,
+				FBA262BC2C1330A1009E47DA /* LoginView */,
 				FB7EF4132C0DF20A009EDC5D /* Main.storyboard */,
 				FB7EF4162C0DF20C009EDC5D /* Assets.xcassets */,
 				FB7EF4182C0DF20C009EDC5D /* LaunchScreen.storyboard */,
 				FB7EF41B2C0DF20C009EDC5D /* Info.plist */,
 				FB7EF4212C0DF230009EDC5D /* GoogleService-Info.plist */,
+				FBA262B92C133068009E47DA /* SettingsView */,
+				FBA262BA2C13307B009E47DA /* CustomCell */,
+				FBA262BB2C133096009E47DA /* MainView */,
+			);
+			path = ikiElveriChatDemo;
+			sourceTree = "<group>";
+		};
+		FBA262B92C133068009E47DA /* SettingsView */ = {
+			isa = PBXGroup;
+			children = (
 				FBCBBAB52C1049D100C1406A /* SettingsTableViewController.swift */,
 				FB094AE32C10FBBD00DD5923 /* EditProfileTableViewController.swift */,
 				FBDFF35E2C12435100D82522 /* StatusTableViewController.swift */,
+			);
+			path = SettingsView;
+			sourceTree = "<group>";
+		};
+		FBA262BA2C13307B009E47DA /* CustomCell */ = {
+			isa = PBXGroup;
+			children = (
 				FBF639152C12EC0600CF6B03 /* UserTableViewCell.swift */,
+			);
+			path = CustomCell;
+			sourceTree = "<group>";
+		};
+		FBA262BB2C133096009E47DA /* MainView */ = {
+			isa = PBXGroup;
+			children = (
 				FBF639172C12EC2A00CF6B03 /* UsersTableViewController.swift */,
 			);
-			path = ikiElveriChatDemo;
+			path = MainView;
+			sourceTree = "<group>";
+		};
+		FBA262BC2C1330A1009E47DA /* LoginView */ = {
+			isa = PBXGroup;
+			children = (
+				FB7EF4112C0DF20A009EDC5D /* LoginViewController.swift */,
+			);
+			path = LoginView;
+			sourceTree = "<group>";
+		};
+		FBA262BD2C1330DC009E47DA /* SecondaryView */ = {
+			isa = PBXGroup;
+			children = (
+				FBA262BE2C133100009E47DA /* ProfileTableViewController.swift */,
+			);
+			path = SecondaryView;
 			sourceTree = "<group>";
 		};
 		FBBD21FB2C0F200E00DE96D1 /* Models */ = {
@@ -263,6 +306,7 @@
 				FBBD21FF2C0F244200DE96D1 /* Constants.swift in Sources */,
 				FBF639162C12EC0600CF6B03 /* UserTableViewCell.swift in Sources */,
 				FBBD21FD2C0F202100DE96D1 /* User.swift in Sources */,
+				FBA262BF2C133100009E47DA /* ProfileTableViewController.swift in Sources */,
 				FB7EF4122C0DF20A009EDC5D /* LoginViewController.swift in Sources */,
 				FBCBBAB62C1049D100C1406A /* SettingsTableViewController.swift in Sources */,
 				FBDFF35B2C123DDF00D82522 /* Extensions.swift in Sources */,
