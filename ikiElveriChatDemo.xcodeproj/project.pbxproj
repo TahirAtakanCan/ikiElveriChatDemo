@@ -38,6 +38,8 @@
 		FBDFF35B2C123DDF00D82522 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDFF35A2C123DDF00D82522 /* Extensions.swift */; };
 		FBDFF35D2C12408900D82522 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDFF35C2C12408900D82522 /* Status.swift */; };
 		FBDFF35F2C12435100D82522 /* StatusTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDFF35E2C12435100D82522 /* StatusTableViewController.swift */; };
+		FBF639162C12EC0600CF6B03 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF639152C12EC0600CF6B03 /* UserTableViewCell.swift */; };
+		FBF639182C12EC2A00CF6B03 /* UsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF639172C12EC2A00CF6B03 /* UsersTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +63,8 @@
 		FBDFF35A2C123DDF00D82522 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		FBDFF35C2C12408900D82522 /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		FBDFF35E2C12435100D82522 /* StatusTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusTableViewController.swift; sourceTree = "<group>"; };
+		FBF639152C12EC0600CF6B03 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
+		FBF639172C12EC2A00CF6B03 /* UsersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +134,8 @@
 				FBCBBAB52C1049D100C1406A /* SettingsTableViewController.swift */,
 				FB094AE32C10FBBD00DD5923 /* EditProfileTableViewController.swift */,
 				FBDFF35E2C12435100D82522 /* StatusTableViewController.swift */,
+				FBF639152C12EC0600CF6B03 /* UserTableViewCell.swift */,
+				FBF639172C12EC2A00CF6B03 /* UsersTableViewController.swift */,
 			);
 			path = ikiElveriChatDemo;
 			sourceTree = "<group>";
@@ -252,8 +258,10 @@
 			files = (
 				FB094AED2C11F67800DD5923 /* GlobalFunctions.swift in Sources */,
 				FBBD22012C0F29AB00DE96D1 /* FCollectionReference.swift in Sources */,
+				FBF639182C12EC2A00CF6B03 /* UsersTableViewController.swift in Sources */,
 				FB094AEA2C11D02400DD5923 /* FileStorage.swift in Sources */,
 				FBBD21FF2C0F244200DE96D1 /* Constants.swift in Sources */,
+				FBF639162C12EC0600CF6B03 /* UserTableViewCell.swift in Sources */,
 				FBBD21FD2C0F202100DE96D1 /* User.swift in Sources */,
 				FB7EF4122C0DF20A009EDC5D /* LoginViewController.swift in Sources */,
 				FBCBBAB62C1049D100C1406A /* SettingsTableViewController.swift in Sources */,
