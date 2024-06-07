@@ -18,7 +18,10 @@ class UsersTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        createDummyUsers()
+        tableView.tableFooterView = UIView()
+        //createDummyUsers()
+        setupSearchController()
+        downloadUsers()
     }
 
     // MARK: - Table view data source
@@ -41,5 +44,48 @@ class UsersTableViewController: UITableViewController {
         return cell
     }
     
+    //MARK: - DownloadUsers
+    private func downloadUsers(){
+        FirebaseUserListener.shared.downloadAllUsersFromFirebase { (allFirebaseUsers) in
+            
+            self.allUsers = allFirebaseUsers
+            
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+        
+    }
+    
+    //MARK: - SetupSearchController
+    private func setupSearchController(){
+        
+        navigationItem.searchController = searchController
+        navigationItem.hidesSearchBarWhenScrolling = true
+        
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search User"
+        searchController.searchResultsUpdater = self
+        definesPresentationContext = true
+        
+    }
+    
+    private func filteredContentForSearchText(searchText: String) {
+        //print("Searching for", searchText)
+        filteredUsers = allUsers.filter({ (user) -> Bool in
+            return user.username.lowercased().contains(searchText.lowercased())
+        })
+        
+        tableView.reloadData()
+    }
 
+}
+
+
+extension UsersTableViewController: UISearchResultsUpdating {
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        filteredContentForSearchText(searchText: searchController.searchBar.text!)
+    }
+    
 }
