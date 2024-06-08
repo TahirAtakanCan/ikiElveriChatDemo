@@ -28,10 +28,11 @@
 		FB7EF4472C0E03AD009EDC5D /* SKPhotoBrowser in Frameworks */ = {isa = PBXBuildFile; productRef = FB7EF4462C0E03AD009EDC5D /* SKPhotoBrowser */; };
 		FB7EF44A2C0E041B009EDC5D /* MessageKit in Frameworks */ = {isa = PBXBuildFile; productRef = FB7EF4492C0E041B009EDC5D /* MessageKit */; };
 		FB7EF44D2C0E0450009EDC5D /* InputBarAccessoryView in Frameworks */ = {isa = PBXBuildFile; productRef = FB7EF44C2C0E0450009EDC5D /* InputBarAccessoryView */; };
-		FB7EF4512C0E07B1009EDC5D /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FB7EF4502C0E07B1009EDC5D /* RealmSwift */; };
 		FBA262BF2C133100009E47DA /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA262BE2C133100009E47DA /* ProfileTableViewController.swift */; };
 		FBA262C12C13494D009E47DA /* RecentChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA262C02C13494D009E47DA /* RecentChat.swift */; };
 		FBA262C32C1352C8009E47DA /* RecentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA262C22C1352C8009E47DA /* RecentTableViewCell.swift */; };
+		FBA262C52C146396009E47DA /* StartChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA262C42C146396009E47DA /* StartChat.swift */; };
+		FBA262C72C146799009E47DA /* FirebaseRecentListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA262C62C146799009E47DA /* FirebaseRecentListener.swift */; };
 		FBBD21FA2C0F1C3E00DE96D1 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = FBBD21F92C0F1C3E00DE96D1 /* Toast */; };
 		FBBD21FD2C0F202100DE96D1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBD21FC2C0F202100DE96D1 /* User.swift */; };
 		FBBD21FF2C0F244200DE96D1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBD21FE2C0F244200DE96D1 /* Constants.swift */; };
@@ -61,6 +62,8 @@
 		FBA262BE2C133100009E47DA /* ProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
 		FBA262C02C13494D009E47DA /* RecentChat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentChat.swift; sourceTree = "<group>"; };
 		FBA262C22C1352C8009E47DA /* RecentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentTableViewCell.swift; sourceTree = "<group>"; };
+		FBA262C42C146396009E47DA /* StartChat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartChat.swift; sourceTree = "<group>"; };
+		FBA262C62C146799009E47DA /* FirebaseRecentListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseRecentListener.swift; sourceTree = "<group>"; };
 		FBBD21FC2C0F202100DE96D1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FBBD21FE2C0F244200DE96D1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		FBBD22002C0F29AB00DE96D1 /* FCollectionReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCollectionReference.swift; sourceTree = "<group>"; };
@@ -88,7 +91,6 @@
 				FB7EF43F2C0E0282009EDC5D /* FirebaseMessaging in Frameworks */,
 				FB094AE72C11063600DD5923 /* YPImagePicker in Frameworks */,
 				FB7EF43B2C0E0282009EDC5D /* FirebaseFirestore in Frameworks */,
-				FB7EF4512C0E07B1009EDC5D /* RealmSwift in Frameworks */,
 				FB7EF43D2C0E0282009EDC5D /* FirebaseFirestoreSwift in Frameworks */,
 				FB7EF4412C0E0282009EDC5D /* FirebaseStorage in Frameworks */,
 			);
@@ -103,6 +105,7 @@
 				FBBD21FE2C0F244200DE96D1 /* Constants.swift */,
 				FB094AEC2C11F67800DD5923 /* GlobalFunctions.swift */,
 				FBDFF35A2C123DDF00D82522 /* Extensions.swift */,
+				FBA262C42C146396009E47DA /* StartChat.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -204,6 +207,7 @@
 				FBBD22002C0F29AB00DE96D1 /* FCollectionReference.swift */,
 				FBBD22032C0F342300DE96D1 /* FirebaseUserListener.swift */,
 				FB094AE92C11D02400DD5923 /* FileStorage.swift */,
+				FBA262C62C146799009E47DA /* FirebaseRecentListener.swift */,
 			);
 			path = FirebaseHelpers;
 			sourceTree = "<group>";
@@ -235,7 +239,6 @@
 				FB7EF4462C0E03AD009EDC5D /* SKPhotoBrowser */,
 				FB7EF4492C0E041B009EDC5D /* MessageKit */,
 				FB7EF44C2C0E0450009EDC5D /* InputBarAccessoryView */,
-				FB7EF4502C0E07B1009EDC5D /* RealmSwift */,
 				FBBD21F92C0F1C3E00DE96D1 /* Toast */,
 				FB094AE62C11063600DD5923 /* YPImagePicker */,
 			);
@@ -273,7 +276,6 @@
 				FB7EF4452C0E03AD009EDC5D /* XCRemoteSwiftPackageReference "SKPhotoBrowser" */,
 				FB7EF4482C0E041B009EDC5D /* XCRemoteSwiftPackageReference "MessageKit" */,
 				FB7EF44B2C0E0450009EDC5D /* XCRemoteSwiftPackageReference "InputBarAccessoryView" */,
-				FB7EF44F2C0E07B1009EDC5D /* XCRemoteSwiftPackageReference "realm-swift" */,
 				FBBD21F82C0F1C3E00DE96D1 /* XCRemoteSwiftPackageReference "Toast-Swift" */,
 				FB094AE52C11063600DD5923 /* XCRemoteSwiftPackageReference "YPImagePicker" */,
 			);
@@ -308,6 +310,7 @@
 				FBA262C12C13494D009E47DA /* RecentChat.swift in Sources */,
 				FB094AED2C11F67800DD5923 /* GlobalFunctions.swift in Sources */,
 				FBBD22012C0F29AB00DE96D1 /* FCollectionReference.swift in Sources */,
+				FBA262C72C146799009E47DA /* FirebaseRecentListener.swift in Sources */,
 				FBF639182C12EC2A00CF6B03 /* UsersTableViewController.swift in Sources */,
 				FB094AEA2C11D02400DD5923 /* FileStorage.swift in Sources */,
 				FBBD21FF2C0F244200DE96D1 /* Constants.swift in Sources */,
@@ -321,6 +324,7 @@
 				FBDFF35F2C12435100D82522 /* StatusTableViewController.swift in Sources */,
 				FBDFF35D2C12408900D82522 /* Status.swift in Sources */,
 				FB7EF40E2C0DF20A009EDC5D /* AppDelegate.swift in Sources */,
+				FBA262C52C146396009E47DA /* StartChat.swift in Sources */,
 				FBBD22042C0F342300DE96D1 /* FirebaseUserListener.swift in Sources */,
 				FB7EF4102C0DF20A009EDC5D /* SceneDelegate.swift in Sources */,
 				FBA262C32C1352C8009E47DA /* RecentTableViewCell.swift in Sources */,
@@ -602,14 +606,6 @@
 				minimumVersion = 6.3.0;
 			};
 		};
-		FB7EF44F2C0E07B1009EDC5D /* XCRemoteSwiftPackageReference "realm-swift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/realm/realm-swift.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 10.50.1;
-			};
-		};
 		FBBD21F82C0F1C3E00DE96D1 /* XCRemoteSwiftPackageReference "Toast-Swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/scalessec/Toast-Swift.git";
@@ -675,11 +671,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FB7EF44B2C0E0450009EDC5D /* XCRemoteSwiftPackageReference "InputBarAccessoryView" */;
 			productName = InputBarAccessoryView;
-		};
-		FB7EF4502C0E07B1009EDC5D /* RealmSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = FB7EF44F2C0E07B1009EDC5D /* XCRemoteSwiftPackageReference "realm-swift" */;
-			productName = RealmSwift;
 		};
 		FBBD21F92C0F1C3E00DE96D1 /* Toast */ = {
 			isa = XCSwiftPackageProductDependency;
