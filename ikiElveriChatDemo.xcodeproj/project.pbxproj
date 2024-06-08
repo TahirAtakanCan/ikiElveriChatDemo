@@ -30,6 +30,8 @@
 		FB7EF44D2C0E0450009EDC5D /* InputBarAccessoryView in Frameworks */ = {isa = PBXBuildFile; productRef = FB7EF44C2C0E0450009EDC5D /* InputBarAccessoryView */; };
 		FB7EF4512C0E07B1009EDC5D /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FB7EF4502C0E07B1009EDC5D /* RealmSwift */; };
 		FBA262BF2C133100009E47DA /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA262BE2C133100009E47DA /* ProfileTableViewController.swift */; };
+		FBA262C12C13494D009E47DA /* RecentChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA262C02C13494D009E47DA /* RecentChat.swift */; };
+		FBA262C32C1352C8009E47DA /* RecentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA262C22C1352C8009E47DA /* RecentTableViewCell.swift */; };
 		FBBD21FA2C0F1C3E00DE96D1 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = FBBD21F92C0F1C3E00DE96D1 /* Toast */; };
 		FBBD21FD2C0F202100DE96D1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBD21FC2C0F202100DE96D1 /* User.swift */; };
 		FBBD21FF2C0F244200DE96D1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBD21FE2C0F244200DE96D1 /* Constants.swift */; };
@@ -57,6 +59,8 @@
 		FB7EF41B2C0DF20C009EDC5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FB7EF4212C0DF230009EDC5D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FBA262BE2C133100009E47DA /* ProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
+		FBA262C02C13494D009E47DA /* RecentChat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentChat.swift; sourceTree = "<group>"; };
+		FBA262C22C1352C8009E47DA /* RecentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentTableViewCell.swift; sourceTree = "<group>"; };
 		FBBD21FC2C0F202100DE96D1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FBBD21FE2C0F244200DE96D1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		FBBD22002C0F29AB00DE96D1 /* FCollectionReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCollectionReference.swift; sourceTree = "<group>"; };
@@ -155,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				FBF639152C12EC0600CF6B03 /* UserTableViewCell.swift */,
+				FBA262C22C1352C8009E47DA /* RecentTableViewCell.swift */,
 			);
 			path = CustomCell;
 			sourceTree = "<group>";
@@ -188,6 +193,7 @@
 			children = (
 				FBBD21FC2C0F202100DE96D1 /* User.swift */,
 				FBDFF35C2C12408900D82522 /* Status.swift */,
+				FBA262C02C13494D009E47DA /* RecentChat.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -299,6 +305,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBA262C12C13494D009E47DA /* RecentChat.swift in Sources */,
 				FB094AED2C11F67800DD5923 /* GlobalFunctions.swift in Sources */,
 				FBBD22012C0F29AB00DE96D1 /* FCollectionReference.swift in Sources */,
 				FBF639182C12EC2A00CF6B03 /* UsersTableViewController.swift in Sources */,
@@ -316,6 +323,7 @@
 				FB7EF40E2C0DF20A009EDC5D /* AppDelegate.swift in Sources */,
 				FBBD22042C0F342300DE96D1 /* FirebaseUserListener.swift in Sources */,
 				FB7EF4102C0DF20A009EDC5D /* SceneDelegate.swift in Sources */,
+				FBA262C32C1352C8009E47DA /* RecentTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
