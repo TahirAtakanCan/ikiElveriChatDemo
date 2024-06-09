@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		FB03F1D92C15BA8000A2CBBE /* ChatsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB03F1D82C15BA8000A2CBBE /* ChatsTableViewController.swift */; };
+		FB03F1DB2C15CB6F00A2CBBE /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB03F1DA2C15CB6F00A2CBBE /* ChatViewController.swift */; };
 		FB094AE42C10FBBD00DD5923 /* EditProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB094AE32C10FBBD00DD5923 /* EditProfileTableViewController.swift */; };
 		FB094AE72C11063600DD5923 /* YPImagePicker in Frameworks */ = {isa = PBXBuildFile; productRef = FB094AE62C11063600DD5923 /* YPImagePicker */; };
 		FB094AEA2C11D02400DD5923 /* FileStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB094AE92C11D02400DD5923 /* FileStorage.swift */; };
@@ -49,6 +50,7 @@
 
 /* Begin PBXFileReference section */
 		FB03F1D82C15BA8000A2CBBE /* ChatsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsTableViewController.swift; sourceTree = "<group>"; };
+		FB03F1DA2C15CB6F00A2CBBE /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		FB094AE32C10FBBD00DD5923 /* EditProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileTableViewController.swift; sourceTree = "<group>"; };
 		FB094AE92C11D02400DD5923 /* FileStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileStorage.swift; sourceTree = "<group>"; };
 		FB094AEC2C11F67800DD5923 /* GlobalFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalFunctions.swift; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				FBA262BE2C133100009E47DA /* ProfileTableViewController.swift */,
+				FB03F1DA2C15CB6F00A2CBBE /* ChatViewController.swift */,
 			);
 			path = SecondaryView;
 			sourceTree = "<group>";
@@ -326,6 +329,7 @@
 				FB094AE42C10FBBD00DD5923 /* EditProfileTableViewController.swift in Sources */,
 				FBDFF35F2C12435100D82522 /* StatusTableViewController.swift in Sources */,
 				FBDFF35D2C12408900D82522 /* Status.swift in Sources */,
+				FB03F1DB2C15CB6F00A2CBBE /* ChatViewController.swift in Sources */,
 				FB7EF40E2C0DF20A009EDC5D /* AppDelegate.swift in Sources */,
 				FB03F1D92C15BA8000A2CBBE /* ChatsTableViewController.swift in Sources */,
 				FBA262C52C146396009E47DA /* StartChat.swift in Sources */,

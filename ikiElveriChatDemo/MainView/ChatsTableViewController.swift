@@ -56,6 +56,12 @@ class ChatsTableViewController: UITableViewController {
         tableView.deselectRow(at: indexPath, animated: true)
         
         
+        let recent = searchController.isActive ? filteredRecents[indexPath.row] : allRecents[indexPath.row]
+        
+        FirebaseRecentListener.shared.clearUnreadCounter(recent: recent)
+        
+        goToChat(recent: recent)
+        
     }
     
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -99,6 +105,11 @@ class ChatsTableViewController: UITableViewController {
                 self.tableView.reloadData()
             }
         }
+    }
+    
+    //MARK: - Navigation
+    private func goToChat(recent: RecentChat) {
+        
     }
     
     //MARK: - Setup Controller
