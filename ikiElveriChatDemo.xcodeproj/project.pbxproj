@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		FB03F1D92C15BA8000A2CBBE /* ChatsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB03F1D82C15BA8000A2CBBE /* ChatsTableViewController.swift */; };
 		FB03F1DB2C15CB6F00A2CBBE /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB03F1DA2C15CB6F00A2CBBE /* ChatViewController.swift */; };
+		FB03F1E02C15CD2C00A2CBBE /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FB03F1DF2C15CD2C00A2CBBE /* RealmSwift */; };
+		FB03F1E32C15DD9700A2CBBE /* RealmSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = FB03F1DF2C15CD2C00A2CBBE /* RealmSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		FB094AE42C10FBBD00DD5923 /* EditProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB094AE32C10FBBD00DD5923 /* EditProfileTableViewController.swift */; };
 		FB094AE72C11063600DD5923 /* YPImagePicker in Frameworks */ = {isa = PBXBuildFile; productRef = FB094AE62C11063600DD5923 /* YPImagePicker */; };
 		FB094AEA2C11D02400DD5923 /* FileStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB094AE92C11D02400DD5923 /* FileStorage.swift */; };
@@ -47,6 +49,20 @@
 		FBF639162C12EC0600CF6B03 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF639152C12EC0600CF6B03 /* UserTableViewCell.swift */; };
 		FBF639182C12EC2A00CF6B03 /* UsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF639172C12EC2A00CF6B03 /* UsersTableViewController.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		FB03F1E22C15DD9500A2CBBE /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				FB03F1E32C15DD9700A2CBBE /* RealmSwift in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		FB03F1D82C15BA8000A2CBBE /* ChatsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsTableViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +103,7 @@
 			files = (
 				FBBD21FA2C0F1C3E00DE96D1 /* Toast in Frameworks */,
 				FB7EF4372C0E0282009EDC5D /* FirebaseAnalytics in Frameworks */,
+				FB03F1E02C15CD2C00A2CBBE /* RealmSwift in Frameworks */,
 				FB7EF44D2C0E0450009EDC5D /* InputBarAccessoryView in Frameworks */,
 				FB7EF4442C0E02ED009EDC5D /* ProgressHUD in Frameworks */,
 				FB7EF4472C0E03AD009EDC5D /* SKPhotoBrowser in Frameworks */,
@@ -228,6 +245,7 @@
 				FB7EF4062C0DF20A009EDC5D /* Sources */,
 				FB7EF4072C0DF20A009EDC5D /* Frameworks */,
 				FB7EF4082C0DF20A009EDC5D /* Resources */,
+				FB03F1E22C15DD9500A2CBBE /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -247,6 +265,7 @@
 				FB7EF44C2C0E0450009EDC5D /* InputBarAccessoryView */,
 				FBBD21F92C0F1C3E00DE96D1 /* Toast */,
 				FB094AE62C11063600DD5923 /* YPImagePicker */,
+				FB03F1DF2C15CD2C00A2CBBE /* RealmSwift */,
 			);
 			productName = ikiElveriChatDemo;
 			productReference = FB7EF40A2C0DF20A009EDC5D /* ikiElveriChatDemo.app */;
@@ -284,6 +303,7 @@
 				FB7EF44B2C0E0450009EDC5D /* XCRemoteSwiftPackageReference "InputBarAccessoryView" */,
 				FBBD21F82C0F1C3E00DE96D1 /* XCRemoteSwiftPackageReference "Toast-Swift" */,
 				FB094AE52C11063600DD5923 /* XCRemoteSwiftPackageReference "YPImagePicker" */,
+				FB03F1DC2C15CD2C00A2CBBE /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = FB7EF40B2C0DF20A009EDC5D /* Products */;
 			projectDirPath = "";
@@ -566,6 +586,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		FB03F1DC2C15CD2C00A2CBBE /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		FB094AE52C11063600DD5923 /* XCRemoteSwiftPackageReference "YPImagePicker" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Yummypets/YPImagePicker.git";
@@ -625,6 +653,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		FB03F1DF2C15CD2C00A2CBBE /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FB03F1DC2C15CD2C00A2CBBE /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
 		FB094AE62C11063600DD5923 /* YPImagePicker */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = FB094AE52C11063600DD5923 /* XCRemoteSwiftPackageReference "YPImagePicker" */;
