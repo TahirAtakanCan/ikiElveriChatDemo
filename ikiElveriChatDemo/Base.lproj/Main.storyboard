@@ -205,7 +205,7 @@
         <!--Users-->
         <scene sceneID="Uqa-zW-usJ">
             <objects>
-                <tableViewController id="2V8-S3-9yV" customClass="UsersTableViewController" customModule="ikiElveriChatDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="usersView" id="2V8-S3-9yV" customClass="UsersTableViewController" customModule="ikiElveriChatDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="TWL-jT-KSD">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -878,7 +878,13 @@
                             <outlet property="delegate" destination="waX-VD-kng" id="6Lr-Fe-Ac8"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Chats" id="EMT-pL-S21"/>
+                    <navigationItem key="navigationItem" title="Chats" id="EMT-pL-S21">
+                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="P4O-vs-4mm">
+                            <connections>
+                                <action selector="composeBarButton:" destination="waX-VD-kng" id="ezW-bQ-bBg"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dFN-pE-n8G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
