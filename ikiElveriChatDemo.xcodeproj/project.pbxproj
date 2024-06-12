@@ -26,6 +26,7 @@
 		FB6B87DD2C19CA22003503F5 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6B87DC2C19CA22003503F5 /* RealmManager.swift */; };
 		FB6B87DF2C19CD45003503F5 /* OutgoingMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6B87DE2C19CD45003503F5 /* OutgoingMessage.swift */; };
 		FB6B87E12C19E853003503F5 /* FirebaseMessageListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6B87E02C19E853003503F5 /* FirebaseMessageListener.swift */; };
+		FB6B87E32C19FFBD003503F5 /* InComingMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6B87E22C19FFBD003503F5 /* InComingMessage.swift */; };
 		FB7EF40E2C0DF20A009EDC5D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7EF40D2C0DF20A009EDC5D /* AppDelegate.swift */; };
 		FB7EF4102C0DF20A009EDC5D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7EF40F2C0DF20A009EDC5D /* SceneDelegate.swift */; };
 		FB7EF4122C0DF20A009EDC5D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7EF4112C0DF20A009EDC5D /* LoginViewController.swift */; };
@@ -92,6 +93,7 @@
 		FB6B87DC2C19CA22003503F5 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		FB6B87DE2C19CD45003503F5 /* OutgoingMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutgoingMessage.swift; sourceTree = "<group>"; };
 		FB6B87E02C19E853003503F5 /* FirebaseMessageListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseMessageListener.swift; sourceTree = "<group>"; };
+		FB6B87E22C19FFBD003503F5 /* InComingMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InComingMessage.swift; sourceTree = "<group>"; };
 		FB7EF40A2C0DF20A009EDC5D /* ikiElveriChatDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ikiElveriChatDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB7EF40D2C0DF20A009EDC5D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB7EF40F2C0DF20A009EDC5D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -268,6 +270,7 @@
 				FB6B87D42C19C033003503F5 /* MKMessage.swift */,
 				FB6B87D92C19C249003503F5 /* RealmMessages */,
 				FB6B87DE2C19CD45003503F5 /* OutgoingMessage.swift */,
+				FB6B87E22C19FFBD003503F5 /* InComingMessage.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -396,6 +399,7 @@
 				FBF639162C12EC0600CF6B03 /* UserTableViewCell.swift in Sources */,
 				FBBD21FD2C0F202100DE96D1 /* User.swift in Sources */,
 				FBA262BF2C133100009E47DA /* ProfileTableViewController.swift in Sources */,
+				FB6B87E32C19FFBD003503F5 /* InComingMessage.swift in Sources */,
 				FB7EF4122C0DF20A009EDC5D /* LoginViewController.swift in Sources */,
 				FB6B87DF2C19CD45003503F5 /* OutgoingMessage.swift in Sources */,
 				FBCBBAB62C1049D100C1406A /* SettingsTableViewController.swift in Sources */,
