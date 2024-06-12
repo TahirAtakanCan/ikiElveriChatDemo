@@ -24,6 +24,8 @@
 		FB6B87D52C19C033003503F5 /* MKMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6B87D42C19C033003503F5 /* MKMessage.swift */; };
 		FB6B87DB2C19C261003503F5 /* LocalMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6B87DA2C19C261003503F5 /* LocalMessage.swift */; };
 		FB6B87DD2C19CA22003503F5 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6B87DC2C19CA22003503F5 /* RealmManager.swift */; };
+		FB6B87DF2C19CD45003503F5 /* OutgoingMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6B87DE2C19CD45003503F5 /* OutgoingMessage.swift */; };
+		FB6B87E12C19E853003503F5 /* FirebaseMessageListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6B87E02C19E853003503F5 /* FirebaseMessageListener.swift */; };
 		FB7EF40E2C0DF20A009EDC5D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7EF40D2C0DF20A009EDC5D /* AppDelegate.swift */; };
 		FB7EF4102C0DF20A009EDC5D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7EF40F2C0DF20A009EDC5D /* SceneDelegate.swift */; };
 		FB7EF4122C0DF20A009EDC5D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7EF4112C0DF20A009EDC5D /* LoginViewController.swift */; };
@@ -88,6 +90,8 @@
 		FB6B87D42C19C033003503F5 /* MKMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKMessage.swift; sourceTree = "<group>"; };
 		FB6B87DA2C19C261003503F5 /* LocalMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalMessage.swift; sourceTree = "<group>"; };
 		FB6B87DC2C19CA22003503F5 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		FB6B87DE2C19CD45003503F5 /* OutgoingMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutgoingMessage.swift; sourceTree = "<group>"; };
+		FB6B87E02C19E853003503F5 /* FirebaseMessageListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseMessageListener.swift; sourceTree = "<group>"; };
 		FB7EF40A2C0DF20A009EDC5D /* ikiElveriChatDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ikiElveriChatDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB7EF40D2C0DF20A009EDC5D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB7EF40F2C0DF20A009EDC5D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -263,6 +267,7 @@
 				FBA262C02C13494D009E47DA /* RecentChat.swift */,
 				FB6B87D42C19C033003503F5 /* MKMessage.swift */,
 				FB6B87D92C19C249003503F5 /* RealmMessages */,
+				FB6B87DE2C19CD45003503F5 /* OutgoingMessage.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -274,6 +279,7 @@
 				FBBD22032C0F342300DE96D1 /* FirebaseUserListener.swift */,
 				FB094AE92C11D02400DD5923 /* FileStorage.swift */,
 				FBA262C62C146799009E47DA /* FirebaseRecentListener.swift */,
+				FB6B87E02C19E853003503F5 /* FirebaseMessageListener.swift */,
 			);
 			path = FirebaseHelpers;
 			sourceTree = "<group>";
@@ -391,6 +397,7 @@
 				FBBD21FD2C0F202100DE96D1 /* User.swift in Sources */,
 				FBA262BF2C133100009E47DA /* ProfileTableViewController.swift in Sources */,
 				FB7EF4122C0DF20A009EDC5D /* LoginViewController.swift in Sources */,
+				FB6B87DF2C19CD45003503F5 /* OutgoingMessage.swift in Sources */,
 				FBCBBAB62C1049D100C1406A /* SettingsTableViewController.swift in Sources */,
 				FBDFF35B2C123DDF00D82522 /* Extensions.swift in Sources */,
 				FB094AE42C10FBBD00DD5923 /* EditProfileTableViewController.swift in Sources */,
@@ -401,6 +408,7 @@
 				FB6B87CD2C19BA44003503F5 /* MessageDisplayDelegate.swift in Sources */,
 				FB6B87C82C19B9D8003503F5 /* MessageDataSource.swift in Sources */,
 				FB03F1D92C15BA8000A2CBBE /* ChatsTableViewController.swift in Sources */,
+				FB6B87E12C19E853003503F5 /* FirebaseMessageListener.swift in Sources */,
 				FB6B87DD2C19CA22003503F5 /* RealmManager.swift in Sources */,
 				FB6B87CF2C19BA5D003503F5 /* MessageLayoutDelegate.swift in Sources */,
 				FBA262C52C146396009E47DA /* StartChat.swift in Sources */,
