@@ -25,6 +25,12 @@ class ChatViewController: MessagesViewController {
     let micButton = InputBarButtonItem()
     
     var mkMessages: [MKMessage] = []
+    var allLocalMessages: Results<LocalMessage>!
+    
+    let realm = try! Realm()
+    
+    //Listeners
+    var notificationToken: NotificationToken?
     
     //MARK: - Inits
     init(chatId: String = "", recipientId: String = "", recipientName: String = "") {
@@ -45,6 +51,8 @@ class ChatViewController: MessagesViewController {
 
         configureMessageCollectionView()
         configureMessageInputBar()
+        
+        loadChats()
     }
     
     
@@ -68,7 +76,7 @@ class ChatViewController: MessagesViewController {
         messageInputBar.delegate = self
         
         let attachButton = InputBarButtonItem()
-        attachButton.image = UIImage(systemName: "plus")
+        attachButton.image = UIImage(systemName: "plus", withConfiguration: UIImage.SymbolConfiguration(pointSize: 30))
         
         attachButton.setSize(CGSize(width: 30, height: 30), animated: false)
         
@@ -76,7 +84,7 @@ class ChatViewController: MessagesViewController {
             
             print("attach button pressed")
         }
-        micButton.image = UIImage(systemName: "mic.fill")
+        micButton.image = UIImage(systemName: "mic.fill",withConfiguration: UIImage.SymbolConfiguration(pointSize: 30))
         micButton.setSize(CGSize(width: 30, height: 30), animated: false)
         
         //add gesture recognizer
@@ -88,6 +96,32 @@ class ChatViewController: MessagesViewController {
         messageInputBar.inputTextView.isImagePasteEnabled = false
         messageInputBar.backgroundView.backgroundColor = .systemBackground
         messageInputBar.inputTextView.backgroundColor = .systemBackground
+        
+    }
+    
+    //MARK: - Load Chats
+    private func loadChats(){
+        
+        let predicate = NSPredicate(format: "chatRoomId = %@", chatId)
+        
+        allLocalMessages = realm.objects(LocalMessage.self).filter(predicate).sorted(byKeyPath: kDATE, ascending: true)
+        
+        //print("we have \(allLocalMessages.count) messages")
+        
+        notificationToken = allLocalMessages.observe({ (changes: RealmCollectionChange) in
+            
+            switch changes {
+            case .initial:
+                print("we have \(self.allLocalMessages.count) messages")
+            case .update(_, _, let insertions, _):
+                for index in insertions {
+                    print("new message \(self.allLocalMessages[index].message)")
+                }
+            case .error(let error):
+                print("Error on new insertion", error.localizedDescription)
+            }
+            
+        })
         
     }
 
