@@ -18,6 +18,14 @@ class ChatViewController: MessagesViewController {
     private var recipientId = ""
     private var recipientName = ""
     
+    let currentUser = MKSender(senderId: User.currentId, displayName: User.currentUser!.username)
+    
+    let refreshController = UIRefreshControl()
+    
+    let micButton = InputBarButtonItem()
+    
+    var mkMessages: [MKMessage] = []
+    
     //MARK: - Inits
     init(chatId: String = "", recipientId: String = "", recipientName: String = "") {
         
@@ -35,10 +43,53 @@ class ChatViewController: MessagesViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-
+        configureMessageCollectionView()
+        configureMessageInputBar()
     }
     
-
+    
+    //MARK: - Configurations
+    private func configureMessageCollectionView(){
+        
+        messagesCollectionView.messagesDataSource = self
+        messagesCollectionView.messageCellDelegate = self
+        messagesCollectionView.messagesDisplayDelegate = self
+        messagesCollectionView.messagesLayoutDelegate = self
+        
+        maintainPositionOnInputBarHeightChanged = true
+        scrollsToLastItemOnKeyboardBeginsEditing = true
+        
+        messagesCollectionView.refreshControl = refreshController
+        
+    }
+    
+    private func configureMessageInputBar(){
+        
+        messageInputBar.delegate = self
+        
+        let attachButton = InputBarButtonItem()
+        attachButton.image = UIImage(systemName: "plus")
+        
+        attachButton.setSize(CGSize(width: 30, height: 30), animated: false)
+        
+        attachButton.onTouchUpInside { item in
+            
+            print("attach button pressed")
+        }
+        micButton.image = UIImage(systemName: "mic.fill")
+        micButton.setSize(CGSize(width: 30, height: 30), animated: false)
+        
+        //add gesture recognizer
+        
+        messageInputBar.setStackViewItems([attachButton], forStack: .left, animated: false)
+        
+        messageInputBar.setLeftStackViewWidthConstant(to: 36, animated: false)
+        
+        messageInputBar.inputTextView.isImagePasteEnabled = false
+        messageInputBar.backgroundView.backgroundColor = .systemBackground
+        messageInputBar.inputTextView.backgroundColor = .systemBackground
+        
+    }
 
 
 }
