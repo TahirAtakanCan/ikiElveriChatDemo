@@ -24,10 +24,9 @@ class OutgoingMessage {
         message.date = Date()
         message.status = kSENT
         
-        if text != nil {
-            sendTextMessage(message: message, text: text!, memberIds: memberIds)
+        if let text = text {
+            sendTextMessage(message: message, text: text, memberIds: memberIds)
         }
-        
     }
     
     class func sendMessage(message: LocalMessage, memberIds: [String]) {
@@ -39,7 +38,6 @@ class OutgoingMessage {
             FirebaseMessageListener.shared.addMessage(message,memberId:memberId)
         }
     }
-    
 }
 
 

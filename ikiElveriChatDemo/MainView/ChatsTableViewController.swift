@@ -55,7 +55,6 @@ class ChatsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        
         let recent = searchController.isActive ? filteredRecents[indexPath.row] : allRecents[indexPath.row]
         
         FirebaseRecentListener.shared.clearUnreadCounter(recent: recent)
@@ -69,18 +68,18 @@ class ChatsTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        
-        if editingStyle == .delete {
             
-            let recent = searchController.isActive ? filteredRecents[indexPath.row] : allRecents[indexPath.row]
-            
-            FirebaseRecentListener.shared.deleteRecent(recent)
-            
-            searchController.isActive ? self.filteredRecents.remove(at: indexPath.row) : allRecents.remove(at: indexPath.row)
-            
-            tableView.deleteRows(at: [indexPath], with: .automatic)
+            if editingStyle == .delete {
+                
+                let recent = searchController.isActive ? filteredRecents[indexPath.row] : allRecents[indexPath.row]
+                
+                FirebaseRecentListener.shared.deleteRecent(recent)
+                
+                searchController.isActive ? self.filteredRecents.remove(at: indexPath.row) : allRecents.remove(at: indexPath.row)
+                
+                tableView.deleteRows(at: [indexPath], with: .automatic)
+            }
         }
-    }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = UIView()

@@ -22,10 +22,8 @@ class InComingMessage {
         
         let mkMessage = MKMessage(message: localMessage)
         
-        //multemedia messages
+        //multimedia messages
         return mkMessage
         
     }
-    
-    
 }

@@ -574,9 +574,9 @@
 				DEVELOPMENT_TEAM = AAS9DNLG6G;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ikiElveriChatDemo/Info.plist;
-				INFOPLIST_KEY_NSAppleMusicUsageDescription = "$(PRODUCT_NAME) would you like to use your media library";
-				INFOPLIST_KEY_NSCameraUsageDescription = "$(PRODUCT_NAME) would you like to use your camera";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "$(PRODUCT_NAME) would you like to use your photo library";
+				INFOPLIST_KEY_NSAppleMusicUsageDescription = "ikiElveriChatDemo would you like to use your media library";
+				INFOPLIST_KEY_NSCameraUsageDescription = "ikiElveriChatDemo would you like to use your camera";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "ikiElveriChatDemo would you like to use your photo library";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -605,9 +605,9 @@
 				DEVELOPMENT_TEAM = AAS9DNLG6G;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ikiElveriChatDemo/Info.plist;
-				INFOPLIST_KEY_NSAppleMusicUsageDescription = "$(PRODUCT_NAME) would you like to use your media library";
-				INFOPLIST_KEY_NSCameraUsageDescription = "$(PRODUCT_NAME) would you like to use your camera";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "$(PRODUCT_NAME) would you like to use your photo library";
+				INFOPLIST_KEY_NSAppleMusicUsageDescription = "ikiElveriChatDemo would you like to use your media library";
+				INFOPLIST_KEY_NSCameraUsageDescription = "ikiElveriChatDemo would you like to use your camera";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "ikiElveriChatDemo would you like to use your photo library";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

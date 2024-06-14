@@ -5,6 +5,7 @@
 //  Created by Tahir Atakan Can on 9.06.2024.
 //
 
+
 import UIKit
 import MessageKit
 import InputBarAccessoryView
@@ -64,8 +65,8 @@ class ChatViewController: MessagesViewController {
         messagesCollectionView.messagesDisplayDelegate = self
         messagesCollectionView.messagesLayoutDelegate = self
         
-        maintainPositionOnInputBarHeightChanged = true
-        scrollsToLastItemOnKeyboardBeginsEditing = true
+        //maintainPositionOnInputBarHeightChanged = true
+        //scrollsToLastItemOnKeyboardBeginsEditing = true
         
         messagesCollectionView.refreshControl = refreshController
         
@@ -101,34 +102,29 @@ class ChatViewController: MessagesViewController {
     
     //MARK: - Load Chats
     private func loadChats(){
-        
         let predicate = NSPredicate(format: "chatRoomId = %@", chatId)
-        
         allLocalMessages = realm.objects(LocalMessage.self).filter(predicate).sorted(byKeyPath: kDATE, ascending: true)
         
-        //print("we have \(allLocalMessages.count) messages")
+        print("we have \(allLocalMessages.count) messages")  // Eklenen debug print
         
         notificationToken = allLocalMessages.observe({ (changes: RealmCollectionChange) in
-            
             switch changes {
             case .initial:
                 self.insertMessages()
                 self.messagesCollectionView.reloadData()
-                
-                //print("we have \(self.allLocalMessages.count) messages")
+                print("we have \(self.allLocalMessages.count) messages")  // Eklenen debug print
             case .update(_, _, let insertions, _):
                 for index in insertions {
-                    //print("new message \(self.allLocalMessages[index].message)")
+                    print("new message \(self.allLocalMessages[index].message)")  // Eklenen debug print
                     self.insertMessage(self.allLocalMessages[index])
                     self.messagesCollectionView.reloadData()
                 }
             case .error(let error):
                 print("Error on new insertion", error.localizedDescription)
             }
-            
         })
-        
     }
+
     
     private func insertMessages() {
         
@@ -138,10 +134,13 @@ class ChatViewController: MessagesViewController {
     }
     
     private func insertMessage(_ localMessage: LocalMessage) {
-        print("inserted message")
+        print("inserted message: \(localMessage.message)")  // Eklenen debug print
         let incoming = InComingMessage(_collectionView: self)
-        self.mkMessages.append(incoming.createMessage(localMessage: localMessage)!)
+        if let mkMessage = incoming.createMessage(localMessage: localMessage) {
+            self.mkMessages.append(mkMessage)
+        }
     }
+
 
 
     //MARK: - Actions
@@ -151,5 +150,4 @@ class ChatViewController: MessagesViewController {
         
         OutgoingMessage.send(chatId: chatId, text: text, photo: photo, video: video, audio: audio, location: location, memberIds: [User.currentId,recipientId])
     }
-    
 }
