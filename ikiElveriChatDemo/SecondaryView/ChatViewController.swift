@@ -52,6 +52,10 @@ class ChatViewController: MessagesViewController {
     
     let realm = try! Realm()
     
+    var displayingMessagesCount = 0
+    var maxMessageNumber = 0
+    var minMessageNumber = 0 
+    
     //Listeners
     var notificationToken: NotificationToken?
     
@@ -71,7 +75,9 @@ class ChatViewController: MessagesViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = recipientName
+        
+        navigationItem.largeTitleDisplayMode = .never
+        //self.title = recipientName
         configureMessageCollectionView()
         configureMessageInputBar()
         
@@ -193,21 +199,53 @@ class ChatViewController: MessagesViewController {
         FirebaseMessageListener.shared.checkForOldChats(User.currentId, collectionId: chatId)
     }
     
+    
 
     //MARK: - Insert Messages
     private func insertMessages() {
         
-        for message in allLocalMessages {
-            insertMessage(message)
+        maxMessageNumber = allLocalMessages.count - displayingMessagesCount
+        minMessageNumber = maxMessageNumber - kNUMBEROFMESSAGES
+        
+        if minMessageNumber < 0 {
+            minMessageNumber = 0
+        }
+        
+        for i in minMessageNumber ..< maxMessageNumber {
+            insertMessage(allLocalMessages[i])
         }
     }
     
     private func insertMessage(_ localMessage: LocalMessage) {
         print("inserted message: \(localMessage.message)")  // Eklenen debug print
         let incoming = InComingMessage(_collectionView: self)
-        if let mkMessage = incoming.createMessage(localMessage: localMessage) {
-            self.mkMessages.append(mkMessage)
+        self.mkMessages.append(incoming.createMessage(localMessage: localMessage)!)
+        displayingMessagesCount += 1
+        
+    }
+    
+    private func loadMoreMessages(maxNumber: Int, minNumber: Int) {
+        
+        maxMessageNumber = minNumber - 1
+        minMessageNumber = maxMessageNumber - kNUMBEROFMESSAGES
+        
+        if minMessageNumber < 0 {
+            minMessageNumber = 0
         }
+        
+        for i in (minMessageNumber ... maxMessageNumber).reversed() {
+            insertOlderMessage(allLocalMessages[i])
+        }
+        
+        
+    }
+    
+    private func insertOlderMessage(_ localMessage: LocalMessage) {
+        print("inserted message: \(localMessage.message)")  // Eklenen debug print
+        let incoming = InComingMessage(_collectionView: self)
+        self.mkMessages.insert(incoming.createMessage(localMessage: localMessage)!, at: 0)
+        displayingMessagesCount += 1
+        
     }
 
 
@@ -229,6 +267,20 @@ class ChatViewController: MessagesViewController {
     func updateTypingIndicator(_ show: Bool) {
         
         subTitleLabel.text = show ? "Typing..." : ""
+    }
+    
+    //MARK: - UIScrollViewDelegate
+    override func scrollViewDidEndDecelerating(_: UIScrollView) {
+        
+        if refreshController.isRefreshing {
+            if displayingMessagesCount < allLocalMessages.count {
+                //load earlear messages
+                self.loadMoreMessages(maxNumber: maxMessageNumber, minNumber: minMessageNumber)
+                messagesCollectionView.reloadDataAndKeepOffset()
+            }
+            
+            refreshController.endRefreshing()
+        }
     }
     
     //MARK: - Helpers

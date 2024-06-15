@@ -16,6 +16,9 @@ extension ChatViewController : MessagesLayoutDelegate {
         
         if indexPath.section % 3==0 {
             
+            if ((indexPath.section == 0) && (allLocalMessages.count > displayingMessagesCount)) {
+                return 40
+            }
             return 18
         }
         return 0

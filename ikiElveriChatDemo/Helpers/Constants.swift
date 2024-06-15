@@ -11,6 +11,8 @@ import Foundation
 let userDefaults = UserDefaults.standard
 public let kFILEREFERANCE = "gs://ikielverichatdemo.appspot.com"
 
+public let kNUMBEROFMESSAGES = 12
+
 public let kCURRENTUSER = "currentUser"
 public let kSTATUS = "status"
 public let kFIRSTRUN = "firstRUN"
