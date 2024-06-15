@@ -12,9 +12,41 @@ import FirebaseFirestoreSwift
 class FirebaseMessageListener {
     
     static let shared = FirebaseMessageListener()
+    var newChatListener: ListenerRegistration!
+    var updateChatListener: ListenerRegistration!
     
     private init() {}
     
+    func listenForNewChats(_ documentId: String, collectionId: String, lastMessageDate: Date) {
+        
+        newChatListener = FirebaseReference(.Messages).document(documentId).collection(collectionId).whereField(kDATE, isGreaterThan: lastMessageDate).addSnapshotListener({ (querySnapshot, error) in
+            
+            guard let snapshot = querySnapshot else {
+                return
+            }
+            
+            for change in snapshot.documentChanges {
+                
+                if change.type == .added {
+                    
+                    let result = Result {
+                        try? change.document.data(as: LocalMessage.self)
+                    }
+                    
+                    switch result {
+                    case .success(let messageObject):
+                        if let message = messageObject {
+                            RealmManager.shared.saveToRealm(message)
+                        }else {
+                            print("Document doesnt exist")
+                        }
+                    case .failure(let error):
+                        print("Error decoding local message \(error.localizedDescription)")
+                    }
+                }
+            }
+        })
+    }
     
     func checkForOldChats(_ documentId: String, collectionId: String) {
         
