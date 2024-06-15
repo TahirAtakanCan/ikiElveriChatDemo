@@ -16,6 +16,28 @@ class FirebaseMessageListener {
     private init() {}
     
     
+    func checkForOldChats(_ documentId: String, collectionId: String) {
+        
+        FirebaseReference(.Messages).document(documentId).collection(collectionId).getDocuments { (querySnapshot, error) in
+            
+            guard let documents = querySnapshot?.documents else {
+                print("no documents for old chats")
+                return
+            }
+            
+            var oldMessages = documents.compactMap { (queryDocumentSnapshot) -> LocalMessage? in
+                return try? queryDocumentSnapshot.data(as: LocalMessage.self)
+            }
+            
+            oldMessages.sort(by: { $0.date < $1.date})
+            
+            for message in oldMessages {
+                RealmManager.shared.saveToRealm(message)
+            }
+        }
+        
+    }
+    
     //MARK: - Add, Update, Delete
     
     func addMessage(_ message: LocalMessage, memberId: String) {

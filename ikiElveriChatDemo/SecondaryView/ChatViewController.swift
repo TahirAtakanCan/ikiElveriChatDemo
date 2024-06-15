@@ -157,20 +157,24 @@ class ChatViewController: MessagesViewController {
     
     //MARK: - Load Chats
     private func loadChats(){
+        
         let predicate = NSPredicate(format: "chatRoomId = %@", chatId)
         allLocalMessages = realm.objects(LocalMessage.self).filter(predicate).sorted(byKeyPath: kDATE, ascending: true)
         
-        print("we have \(allLocalMessages.count) messages")  // Eklenen debug print
+        //print("we have \(allLocalMessages.count) messages")  // Eklenen debug print
+        if allLocalMessages.isEmpty {
+            checkForOldChats()
+        }
         
         notificationToken = allLocalMessages.observe({ (changes: RealmCollectionChange) in
             switch changes {
             case .initial:
                 self.insertMessages()
                 self.messagesCollectionView.reloadData()
-                print("we have \(self.allLocalMessages.count) messages")  // Eklenen debug print
+                //print("we have \(self.allLocalMessages.count) messages")  // Eklenen debug print
             case .update(_, _, let insertions, _):
                 for index in insertions {
-                    print("new message \(self.allLocalMessages[index].message)")  // Eklenen debug print
+                    //print("new message \(self.allLocalMessages[index].message)")  // Eklenen debug print
                     self.insertMessage(self.allLocalMessages[index])
                     self.messagesCollectionView.reloadData()
                 }
@@ -179,8 +183,17 @@ class ChatViewController: MessagesViewController {
             }
         })
     }
-
     
+    private func listenForNewChats(){
+        
+    }
+    
+    private func checkForOldChats(){
+        FirebaseMessageListener.shared.checkForOldChats(User.currentId, collectionId: chatId)
+    }
+    
+
+    //MARK: - Insert Messages
     private func insertMessages() {
         
         for message in allLocalMessages {
