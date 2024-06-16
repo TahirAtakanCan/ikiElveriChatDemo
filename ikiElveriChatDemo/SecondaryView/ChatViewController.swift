@@ -56,6 +56,7 @@ class ChatViewController: MessagesViewController {
     var maxMessageNumber = 0
     var minMessageNumber = 0 
     
+    var typingCounter = 0
     //Listeners
     var notificationToken: NotificationToken?
     
@@ -78,6 +79,9 @@ class ChatViewController: MessagesViewController {
         
         navigationItem.largeTitleDisplayMode = .never
         //self.title = recipientName
+        
+        createTypingObserver()
+        
         configureMessageCollectionView()
         configureMessageInputBar()
         
@@ -263,6 +267,35 @@ class ChatViewController: MessagesViewController {
     }
     
     //MARK: - Update Typing indicator
+    
+    func createTypingObserver() {
+        
+        FirebaseTypingListener.shared.createTypingObserver(chatRoomId: chatId) { (isTyping) in
+            DispatchQueue.main.async {
+                self.updateTypingIndicator(isTyping)
+            }
+        }
+    }
+    
+    func typingIndicatorUpdate(){
+        
+        typingCounter += 1
+        
+        FirebaseTypingListener.saveTypingCounter(typing: true, chatRoomId: chatId)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+            self.typingCounterStop()
+        }
+    }
+    
+    func typingCounterStop() {
+        
+        typingCounter -= 1
+        
+        if typingCounter == 0 {
+            FirebaseTypingListener.saveTypingCounter(typing: false, chatRoomId: chatId)
+        }
+    }
     
     func updateTypingIndicator(_ show: Bool) {
         
