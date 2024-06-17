@@ -24,9 +24,11 @@ class OutgoingMessage {
         message.date = Date()
         message.status = kSENT
         
-        if let text = text {
-            sendTextMessage(message: message, text: text, memberIds: memberIds)
+        if text != nil {
+            sendTextMessage(message: message, text: text!, memberIds: memberIds)
         }
+        
+        FirebaseRecentListener.shared.updateRecents(chatRoomId: chatId, lastMessage: message.message)
     }
     
     class func sendMessage(message: LocalMessage, memberIds: [String]) {

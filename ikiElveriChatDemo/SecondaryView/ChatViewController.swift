@@ -221,7 +221,9 @@ class ChatViewController: MessagesViewController {
     }
     
     private func insertMessage(_ localMessage: LocalMessage) {
-        print("inserted message: \(localMessage.message)")  // Eklenen debug print
+        //print("inserted message: \(localMessage.message)")  // Eklenen debug print
+        markMessageAsRead(localMessage)
+        
         let incoming = InComingMessage(_collectionView: self)
         self.mkMessages.append(incoming.createMessage(localMessage: localMessage)!)
         displayingMessagesCount += 1
@@ -252,6 +254,12 @@ class ChatViewController: MessagesViewController {
         
     }
 
+    private func markMessageAsRead(_ localMessage: LocalMessage) {
+        
+        if localMessage.senderId != User.currentId {
+            FirebaseMessageListener.shared.updateMessageInFirebase(localMessage, memberIds: [User.currentId, recipientId])
+        }
+    }
 
 
     //MARK: - Actions
@@ -263,6 +271,8 @@ class ChatViewController: MessagesViewController {
     }
     
     @objc func backButtonPressed(){
+        FirebaseRecentListener.shared.resetRecentCounter(chatRoomId: chatId)
+        removeListeners()
         self.navigationController?.popViewController(animated: true)
     }
     
@@ -317,6 +327,12 @@ class ChatViewController: MessagesViewController {
     }
     
     //MARK: - Helpers
+    
+    private func removeListeners() {
+        FirebaseTypingListener.shared.removeTypingListener()
+        FirebaseMessageListener.shared.removeListeners()
+        
+    }
     
     private func lastMessageDate() -> Date {
         
