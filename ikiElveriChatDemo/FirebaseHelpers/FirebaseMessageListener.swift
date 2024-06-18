@@ -65,7 +65,9 @@ class FirebaseMessageListener {
                     switch result {
                     case .success(let messageObject):
                         if let message = messageObject {
-                            completion(message)
+                            if message.senderId != User.currentId {
+                                RealmManager.shared.saveToRealm(message)
+                            }
                         }else {
                             print("Document does not exits in chat")
                         }

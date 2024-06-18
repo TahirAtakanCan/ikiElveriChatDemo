@@ -211,8 +211,9 @@ class ChatViewController: MessagesViewController {
         
         FirebaseMessageListener.shared.listenForReadStatusChange(User.currentId, collectionId: chatId) { (updatedMessage) in
             
-            print("..............updated message", updatedMessage.message)
-            print("..............updated message read status", updatedMessage.status)
+            if updatedMessage.status != kSENT{
+                self.updateMessage(updatedMessage)
+            }
         }
         
     }
@@ -234,7 +235,10 @@ class ChatViewController: MessagesViewController {
     
     private func insertMessage(_ localMessage: LocalMessage) {
         //print("inserted message: \(localMessage.message)")  // Eklenen debug print
-        markMessageAsRead(localMessage)
+        if localMessage.senderId != User.currentId {
+            markMessageAsRead(localMessage)
+        }
+        
         
         let incoming = InComingMessage(_collectionView: self)
         self.mkMessages.append(incoming.createMessage(localMessage: localMessage)!)
@@ -268,7 +272,7 @@ class ChatViewController: MessagesViewController {
 
     private func markMessageAsRead(_ localMessage: LocalMessage) {
         
-        if localMessage.senderId != User.currentId {
+        if localMessage.senderId != User.currentId && localMessage.status != kREAD {
             FirebaseMessageListener.shared.updateMessageInFirebase(localMessage, memberIds: [User.currentId, recipientId])
         }
     }
@@ -335,6 +339,25 @@ class ChatViewController: MessagesViewController {
             }
             
             refreshController.endRefreshing()
+        }
+    }
+    
+    //MARK: - UpdateReadMessageStatus
+    private func updateMessage(_ localMessage: LocalMessage) {
+        
+        for index in 0 ..< mkMessages.count {
+            let tempMessage = mkMessages[index]
+            
+            if localMessage.id == tempMessage.messageId {
+                mkMessages[index].status = localMessage.status
+                mkMessages[index].readDate = localMessage.readDate
+                
+                RealmManager.shared.saveToRealm(localMessage)
+                
+                if mkMessages[index].status == kREAD {
+                    self.messagesCollectionView.reloadData()
+                }
+            }
         }
     }
     
