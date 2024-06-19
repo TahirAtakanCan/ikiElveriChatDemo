@@ -17,44 +17,47 @@ class FileStorage {
     
     //MARK: -  Images
     class func uploadImage(_ image: UIImage, directory: String, completion: @escaping(_ documentLink: String?) -> Void) {
-        
-        let storageRef = storage.reference(forURL: kFILEREFERANCE).child(directory)
-        
-        let imageData = image.jpegData(compressionQuality: 0.6)
-        
-        var task: StorageUploadTask!
-        
-        task = storageRef.putData(imageData!, metadata: nil, completion: { (metadata, error) in
+            let storageRef = storage.reference(forURL: kFILEREFERANCE).child(directory)
             
-            task.removeAllObservers()
-            ProgressHUD.dismiss()
-            
-            if error != nil {
-                print("error uploading image \(error!.localizedDescription)")
+            guard let imageData = image.jpegData(compressionQuality: 0.6) else {
+                print("Error: Could not convert image to data")
+                completion(nil)
                 return
             }
             
-            storageRef.downloadURL { (url, error) in
+            var task: StorageUploadTask!
+            
+            task = storageRef.putData(imageData, metadata: nil, completion: { (metadata, error) in
+                task.removeAllObservers()
+                ProgressHUD.dismiss()
                 
-                guard let downloadUrl = url else {
+                if let error = error {
+                    print("Error uploading image: \(error.localizedDescription)")
                     completion(nil)
                     return
                 }
                 
-                completion(downloadUrl.absoluteString)
-                
+                storageRef.downloadURL { (url, error) in
+                    if let error = error {
+                        print("Error getting download URL: \(error.localizedDescription)")
+                        completion(nil)
+                        return
+                    }
+                    
+                    guard let downloadUrl = url else {
+                        completion(nil)
+                        return
+                    }
+                    
+                    completion(downloadUrl.absoluteString)
+                }
+            })
+            
+            task.observe(StorageTaskStatus.progress) { (snapshot) in
+                let progress = snapshot.progress!.completedUnitCount / snapshot.progress!.totalUnitCount
+                //ProgressHUD.showProgress(CGFloat(progress))
             }
-            
-        })
-        
-        task.observe(StorageTaskStatus.progress) { (snapshot) in
-            
-            let progress = snapshot.progress!.completedUnitCount / snapshot.progress!.totalUnitCount
-            //ProgressHUD.showProgress(CGFloat(progress))
-            
         }
-        
-    }
     
     
     class func downloadImage(imageUrl: String, completion: @escaping (_ image: UIImage?) -> Void) {
@@ -62,17 +65,17 @@ class FileStorage {
         
         if fileExistsAtPath(path: imageFileName) {
             //get it locally
-            print("We have local image")
+            //print("We have local image")
             
             if let contentsOfFile = UIImage(contentsOfFile: fileInDocumentsDirectory(fileName: imageFileName)) {
                 completion(contentsOfFile)
             }else{
-                print("couldn't convert local image")
+                //print("couldn't convert local image")
                 completion(UIImage(named: "avatar"))
             }
         }else {
             //download from FB
-            print("Lets get from FB")
+            //print("Lets get from FB")
             
             if imageUrl != "" {
                 let documentUrl = URL(string: imageUrl)
