@@ -56,6 +56,7 @@
 		FBBD22012C0F29AB00DE96D1 /* FCollectionReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBD22002C0F29AB00DE96D1 /* FCollectionReference.swift */; };
 		FBBD22042C0F342300DE96D1 /* FirebaseUserListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBD22032C0F342300DE96D1 /* FirebaseUserListener.swift */; };
 		FBCBBAB62C1049D100C1406A /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCBBAB52C1049D100C1406A /* SettingsTableViewController.swift */; };
+		FBDBD61B2C241C0900065039 /* PhotoMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDBD61A2C241C0900065039 /* PhotoMessage.swift */; };
 		FBDFF35B2C123DDF00D82522 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDFF35A2C123DDF00D82522 /* Extensions.swift */; };
 		FBDFF35D2C12408900D82522 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDFF35C2C12408900D82522 /* Status.swift */; };
 		FBDFF35F2C12435100D82522 /* StatusTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDFF35E2C12435100D82522 /* StatusTableViewController.swift */; };
@@ -115,6 +116,7 @@
 		FBBD22002C0F29AB00DE96D1 /* FCollectionReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCollectionReference.swift; sourceTree = "<group>"; };
 		FBBD22032C0F342300DE96D1 /* FirebaseUserListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUserListener.swift; sourceTree = "<group>"; };
 		FBCBBAB52C1049D100C1406A /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		FBDBD61A2C241C0900065039 /* PhotoMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoMessage.swift; sourceTree = "<group>"; };
 		FBDFF35A2C123DDF00D82522 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		FBDFF35C2C12408900D82522 /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		FBDFF35E2C12435100D82522 /* StatusTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusTableViewController.swift; sourceTree = "<group>"; };
@@ -273,6 +275,7 @@
 				FB6B87D92C19C249003503F5 /* RealmMessages */,
 				FB6B87DE2C19CD45003503F5 /* OutgoingMessage.swift */,
 				FB6B87E22C19FFBD003503F5 /* InComingMessage.swift */,
+				FBDBD61A2C241C0900065039 /* PhotoMessage.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -414,6 +417,7 @@
 				FB03F1DB2C15CB6F00A2CBBE /* ChatViewController.swift in Sources */,
 				FB7EF40E2C0DF20A009EDC5D /* AppDelegate.swift in Sources */,
 				FB6B87CD2C19BA44003503F5 /* MessageDisplayDelegate.swift in Sources */,
+				FBDBD61B2C241C0900065039 /* PhotoMessage.swift in Sources */,
 				FB6B87C82C19B9D8003503F5 /* MessageDataSource.swift in Sources */,
 				FB03F1D92C15BA8000A2CBBE /* ChatsTableViewController.swift in Sources */,
 				FB6B87E12C19E853003503F5 /* FirebaseMessageListener.swift in Sources */,
