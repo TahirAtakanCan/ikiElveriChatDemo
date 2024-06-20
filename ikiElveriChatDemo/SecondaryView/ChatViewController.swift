@@ -11,6 +11,12 @@ import MessageKit
 import InputBarAccessoryView
 import YPImagePicker
 import RealmSwift
+import Foundation
+import AVFoundation
+
+struct Video {
+    let url: URL
+}
 
 class ChatViewController: MessagesViewController {
     
@@ -282,11 +288,10 @@ class ChatViewController: MessagesViewController {
 
     //MARK: - Actions
     
-    func messageSend(text: String?, photo: UIImage?, video: String?, audio: String?, location: String?, audioDuration: Float = 0.0) {
-        //print("sending text", text)
-        print("Photo: \(String(describing: photo))")
-        OutgoingMessage.send(chatId: chatId, text: text, photo: photo, video: video, audio: audio, location: location, memberIds: [User.currentId,recipientId])
-    }
+    func messageSend(text: String?, photo: UIImage?, video: Video?, audio: String?, location: String?, audioDuration: Float = 0.0) {
+            print("Photo: \(String(describing: photo))")
+            OutgoingMessage.send(chatId: chatId, text: text, photo: photo, video: video, audio: audio, location: location, memberIds: [User.currentId, recipientId])
+        }
     
     @objc func backButtonPressed(){
         FirebaseRecentListener.shared.resetRecentCounter(chatRoomId: chatId)
@@ -415,51 +420,57 @@ class ChatViewController: MessagesViewController {
     
     //MARK: - Gallery
     private func showImageGallery(camera: Bool) {
-            var config = YPImagePickerConfiguration()
-            
-            // Sekmeleri yapılandır
-            config.screens = camera ? [.photo] : [.library, .photo, .video]
-            
-            // Resim limitini ayarla
-            config.library.maxNumberOfItems = 3
-
-            // Başlangıç sekmesini ayarla
-            config.startOnScreen = .library
-
-            // Video maksimum süresini ayarla
-            config.video.libraryTimeLimit = 30.0
-
-            // Picker'ı oluştur ve sun
-            let picker = YPImagePicker(configuration: config)
-            picker.didFinishPicking { [unowned picker] items, cancelled in
-                if cancelled {
-                    picker.dismiss(animated: true, completion: nil)
-                    return
-                }
-                
-                for item in items {
-                    switch item {
-                    case .photo(let photo):
-                        print("Picked photo: \(photo.image)") // Bu satırı ekleyin
-                        self.messageSend(text: nil, photo: photo.image, video: nil, audio: nil, location: nil)
-                    case .video(let video):
-                        print("Picked video: \(video.url)") // Bu satırı ekleyin
-                        self.messageSend(text: nil, photo: nil, video: video.url.absoluteString, audio: nil, location: nil)
-                    }
-                }
-                picker.dismiss(animated: true, completion: nil)
-            }
-
-            self.present(picker, animated: true, completion: nil)
-        }
-    }
-
-    extension ChatViewController {
-        func presentImagePicker() {
-            showImageGallery(camera: false)
-        }
+        var config = YPImagePickerConfiguration()
         
-        func presentCamera() {
-            showImageGallery(camera: true)
+        
+        config.screens = camera ? [.photo] : [.library, .photo, .video]
+        
+        
+        config.library.mediaType = .photoAndVideo
+        
+        
+        config.library.maxNumberOfItems = 1
+
+        
+        config.startOnScreen = .library
+
+        
+        config.video.libraryTimeLimit = 30.0
+        config.video.compression = AVAssetExportPresetHighestQuality
+
+        
+        let picker = YPImagePicker(configuration: config)
+        picker.didFinishPicking { [unowned picker] items, cancelled in
+            if cancelled {
+                picker.dismiss(animated: true, completion: nil)
+                return
+            }
+            
+            for item in items {
+                switch item {
+                case .photo(let photo):
+                    print("Picked photo: \(photo.image)")
+                    self.messageSend(text: nil, photo: photo.image, video: nil, audio: nil, location: nil)
+                case .video(let video):
+                    print("Picked video: \(video.url)")
+                    let videoItem = Video(url: video.url)
+                    self.messageSend(text: nil, photo: nil, video: videoItem, audio: nil, location: nil)
+                }
+            }
+            picker.dismiss(animated: true, completion: nil)
         }
+
+        self.present(picker, animated: true, completion: nil)
     }
+
+    }
+
+extension ChatViewController {
+    func presentImagePicker() {
+        showImageGallery(camera: false)
+    }
+    
+    func presentCamera() {
+        showImageGallery(camera: true)
+    }
+}
