@@ -36,6 +36,23 @@ class InComingMessage {
             }
         }
         
+        if localMessage.type == kVIDEO {
+            
+            FileStorage.downloadImage(imageUrl: localMessage.pictureUrl) { (thumbNail) in
+                FileStorage.downloadVideo(videoLink: localMessage.videoUrl) { (readyToPlay, fileName) in
+                    
+                    let videoURL = URL(fileURLWithPath: fileInDocumentsDirectory(fileName: fileName))
+                    
+                    let videoItem = VideoMessage(url: videoURL)
+                    
+                    mkMessage.videoItem = videoItem
+                    mkMessage.kind = MessageKind.video(videoItem)
+                }
+                mkMessage.videoItem?.image = thumbNail
+                self.messageCollectionView.messagesCollectionView.reloadData()
+            }
+        }
+        
         return mkMessage
         
     }

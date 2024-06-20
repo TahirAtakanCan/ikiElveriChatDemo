@@ -57,6 +57,7 @@
 		FBBD22042C0F342300DE96D1 /* FirebaseUserListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBD22032C0F342300DE96D1 /* FirebaseUserListener.swift */; };
 		FBCBBAB62C1049D100C1406A /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCBBAB52C1049D100C1406A /* SettingsTableViewController.swift */; };
 		FBD48E1E2C2437ED00517C19 /* VideoEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD48E1D2C2437ED00517C19 /* VideoEditor.swift */; };
+		FBD48E202C245F0400517C19 /* VideoMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD48E1F2C245F0400517C19 /* VideoMessage.swift */; };
 		FBDBD61B2C241C0900065039 /* PhotoMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDBD61A2C241C0900065039 /* PhotoMessage.swift */; };
 		FBDFF35B2C123DDF00D82522 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDFF35A2C123DDF00D82522 /* Extensions.swift */; };
 		FBDFF35D2C12408900D82522 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDFF35C2C12408900D82522 /* Status.swift */; };
@@ -118,7 +119,8 @@
 		FBBD22032C0F342300DE96D1 /* FirebaseUserListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUserListener.swift; sourceTree = "<group>"; };
 		FBCBBAB52C1049D100C1406A /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		FBD48E1D2C2437ED00517C19 /* VideoEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoEditor.swift; sourceTree = "<group>"; };
-		FBDBD61A2C241C0900065039 /* PhotoMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoMessage.swift; sourceTree = "<group>"; };
+		FBD48E1F2C245F0400517C19 /* VideoMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VideoMessage.swift; path = ../VideoMessage.swift; sourceTree = "<group>"; };
+		FBDBD61A2C241C0900065039 /* PhotoMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PhotoMessage.swift; path = ../PhotoMessage.swift; sourceTree = "<group>"; };
 		FBDFF35A2C123DDF00D82522 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		FBDFF35C2C12408900D82522 /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		FBDFF35E2C12435100D82522 /* StatusTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusTableViewController.swift; sourceTree = "<group>"; };
@@ -277,7 +279,7 @@
 				FB6B87D92C19C249003503F5 /* RealmMessages */,
 				FB6B87DE2C19CD45003503F5 /* OutgoingMessage.swift */,
 				FB6B87E22C19FFBD003503F5 /* InComingMessage.swift */,
-				FBDBD61A2C241C0900065039 /* PhotoMessage.swift */,
+				FBD48E212C245F0800517C19 /* New Group */,
 				FBD48E1D2C2437ED00517C19 /* VideoEditor.swift */,
 			);
 			path = Models;
@@ -294,6 +296,15 @@
 				FB9773382C1F387B00EB03D4 /* FirebaseTypingListener.swift */,
 			);
 			path = FirebaseHelpers;
+			sourceTree = "<group>";
+		};
+		FBD48E212C245F0800517C19 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				FBDBD61A2C241C0900065039 /* PhotoMessage.swift */,
+				FBD48E1F2C245F0400517C19 /* VideoMessage.swift */,
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -431,6 +442,7 @@
 				FBBD22042C0F342300DE96D1 /* FirebaseUserListener.swift in Sources */,
 				FB7EF4102C0DF20A009EDC5D /* SceneDelegate.swift in Sources */,
 				FBA262C32C1352C8009E47DA /* RecentTableViewCell.swift in Sources */,
+				FBD48E202C245F0400517C19 /* VideoMessage.swift in Sources */,
 				FB6B87D52C19C033003503F5 /* MKMessage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

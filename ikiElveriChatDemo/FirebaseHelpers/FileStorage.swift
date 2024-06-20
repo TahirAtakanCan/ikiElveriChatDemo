@@ -10,6 +10,7 @@ import FirebaseStorage
 import Toast
 import UIKit
 import ProgressHUD
+import AVFoundation
 
 let storage = Storage.storage()
 
@@ -143,6 +144,38 @@ class FileStorage {
             }
         }
     
+    class func downloadVideo(videoLink: String, completion: @escaping (_ isReadyToPlay: Bool, _ videoFileName: String) -> Void) {
+        
+        let videoUrl = URL(string: videoLink)
+        let videoFileName = fileNameFrom(fileUrl: videoLink) + ".mov"
+        
+        if fileExistsAtPath(path: videoFileName) {
+            completion(true, videoFileName)
+        } else {
+            let downloadQueue = DispatchQueue(label: "VideoDownloadQueue", qos: .userInitiated)
+            
+            downloadQueue.async {
+                let urlSession = URLSession(configuration: .default)
+                let downloadTask = urlSession.dataTask(with: videoUrl!) { data, response, error in
+                    if let data = data {
+                        // Save Locally
+                        FileStorage.saveFileLocally(fileData: data as NSData, fileName: videoFileName)
+                        
+                        DispatchQueue.main.async {
+                            completion(true, videoFileName)
+                        }
+                    } else {
+                        print("no document in database")
+                        DispatchQueue.main.async {
+                            completion(false, "")
+                        }
+                    }
+                }
+                downloadTask.resume()
+            }
+        }
+    }
+
     //MARK: - Save Locally
     class func saveFileLocally(fileData: NSData, fileName: String) {
         
