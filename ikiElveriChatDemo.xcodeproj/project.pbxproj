@@ -15,6 +15,7 @@
 		FB094AE72C11063600DD5923 /* YPImagePicker in Frameworks */ = {isa = PBXBuildFile; productRef = FB094AE62C11063600DD5923 /* YPImagePicker */; };
 		FB094AEA2C11D02400DD5923 /* FileStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB094AE92C11D02400DD5923 /* FileStorage.swift */; };
 		FB094AED2C11F67800DD5923 /* GlobalFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB094AEC2C11F67800DD5923 /* GlobalFunctions.swift */; };
+		FB4670592C259C1400164255 /* LocationMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4670582C259C1400164255 /* LocationMessage.swift */; };
 		FB6B87C82C19B9D8003503F5 /* MessageDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6B87C72C19B9D8003503F5 /* MessageDataSource.swift */; };
 		FB6B87CB2C19BA14003503F5 /* MessageCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6B87CA2C19BA14003503F5 /* MessageCellDelegate.swift */; };
 		FB6B87CD2C19BA44003503F5 /* MessageDisplayDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6B87CC2C19BA44003503F5 /* MessageDisplayDelegate.swift */; };
@@ -87,6 +88,7 @@
 		FB094AE32C10FBBD00DD5923 /* EditProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileTableViewController.swift; sourceTree = "<group>"; };
 		FB094AE92C11D02400DD5923 /* FileStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileStorage.swift; sourceTree = "<group>"; };
 		FB094AEC2C11F67800DD5923 /* GlobalFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalFunctions.swift; sourceTree = "<group>"; };
+		FB4670582C259C1400164255 /* LocationMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationMessage.swift; sourceTree = "<group>"; };
 		FB6B87C72C19B9D8003503F5 /* MessageDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageDataSource.swift; sourceTree = "<group>"; };
 		FB6B87CA2C19BA14003503F5 /* MessageCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCellDelegate.swift; sourceTree = "<group>"; };
 		FB6B87CC2C19BA44003503F5 /* MessageDisplayDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageDisplayDelegate.swift; sourceTree = "<group>"; };
@@ -306,6 +308,7 @@
 			children = (
 				FBDBD61A2C241C0900065039 /* PhotoMessage.swift */,
 				FBD48E1F2C245F0400517C19 /* VideoMessage.swift */,
+				FB4670582C259C1400164255 /* LocationMessage.swift */,
 			);
 			path = MediaMessage;
 			sourceTree = "<group>";
@@ -437,6 +440,7 @@
 				FB7EF40E2C0DF20A009EDC5D /* AppDelegate.swift in Sources */,
 				FB6B87CD2C19BA44003503F5 /* MessageDisplayDelegate.swift in Sources */,
 				FBDBD61B2C241C0900065039 /* PhotoMessage.swift in Sources */,
+				FB4670592C259C1400164255 /* LocationMessage.swift in Sources */,
 				FB6B87C82C19B9D8003503F5 /* MessageDataSource.swift in Sources */,
 				FB03F1D92C15BA8000A2CBBE /* ChatsTableViewController.swift in Sources */,
 				FB6B87E12C19E853003503F5 /* FirebaseMessageListener.swift in Sources */,
