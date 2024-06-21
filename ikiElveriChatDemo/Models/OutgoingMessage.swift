@@ -25,16 +25,20 @@ class OutgoingMessage {
         message.date = Date()
         message.status = kSENT
         
-        if let text = text {
-            sendTextMessage(message: message, text: text, memberIds: memberIds)
+        if  text != nil {
+            sendTextMessage(message: message, text: text!, memberIds: memberIds)
         }
         
-        if let photo = photo {
-            sendPictureMessage(message: message, photo: photo, memberIds: memberIds)
+        if  photo != nil {
+            sendPictureMessage(message: message, photo: photo!, memberIds: memberIds)
         }
         
-        if let video = video {
-            sendVideoMessage(message: message, video: video, memberIds: memberIds)
+        if  video != nil {
+            sendVideoMessage(message: message, video: video!, memberIds: memberIds)
+        }
+        
+        if  location != nil {
+            sendLocationMessage(message: message, memberIds: memberIds)
         }
         
         FirebaseRecentListener.shared.updateRecents(chatRoomId: chatId, lastMessage: message.message)
@@ -108,6 +112,16 @@ class OutgoingMessage {
                 }
             }
         }
+    }
+    
+    class func sendLocationMessage(message: LocalMessage, memberIds: [String]) {
+        let currentLocation = LocationManager.shared.currentLocation
+        message.message = "Location Message"
+        message.type = kLOCATION
+        message.latitude = currentLocation?.latitude ?? 0.0
+        message.longitude = currentLocation?.longitude ?? 0.0
+        
+        OutgoingMessage.sendMessage(message: message, memberIds: memberIds)
     }
     
     // Thumbnail oluşturma fonksiyonu

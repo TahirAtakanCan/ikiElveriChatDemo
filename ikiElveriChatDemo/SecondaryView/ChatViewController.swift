@@ -316,7 +316,9 @@ class ChatViewController: MessagesViewController {
         }
         
         let shareLocation = UIAlertAction(title: "Location", style: .default) { (alert) in
-            print("share location")
+            if let _ = LocationManager.shared.currentLocation {
+                self.messageSend(text: nil, photo: nil, video: nil, audio: nil, location: kLOCATION)
+            }
         }
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
