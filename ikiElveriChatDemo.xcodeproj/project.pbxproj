@@ -16,6 +16,7 @@
 		FB094AEA2C11D02400DD5923 /* FileStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB094AE92C11D02400DD5923 /* FileStorage.swift */; };
 		FB094AED2C11F67800DD5923 /* GlobalFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB094AEC2C11F67800DD5923 /* GlobalFunctions.swift */; };
 		FB4670592C259C1400164255 /* LocationMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4670582C259C1400164255 /* LocationMessage.swift */; };
+		FB4792FE2C2752EC0036FD79 /* MapAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4792FD2C2752EC0036FD79 /* MapAnnotation.swift */; };
 		FB4B8F982C272803008FBD31 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4B8F972C272803008FBD31 /* MapViewController.swift */; };
 		FB6B87C82C19B9D8003503F5 /* MessageDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6B87C72C19B9D8003503F5 /* MessageDataSource.swift */; };
 		FB6B87CB2C19BA14003503F5 /* MessageCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6B87CA2C19BA14003503F5 /* MessageCellDelegate.swift */; };
@@ -90,6 +91,7 @@
 		FB094AE92C11D02400DD5923 /* FileStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileStorage.swift; sourceTree = "<group>"; };
 		FB094AEC2C11F67800DD5923 /* GlobalFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalFunctions.swift; sourceTree = "<group>"; };
 		FB4670582C259C1400164255 /* LocationMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationMessage.swift; sourceTree = "<group>"; };
+		FB4792FD2C2752EC0036FD79 /* MapAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapAnnotation.swift; sourceTree = "<group>"; };
 		FB4B8F972C272803008FBD31 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		FB6B87C72C19B9D8003503F5 /* MessageDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageDataSource.swift; sourceTree = "<group>"; };
 		FB6B87CA2C19BA14003503F5 /* MessageCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCellDelegate.swift; sourceTree = "<group>"; };
@@ -287,6 +289,7 @@
 				FB6B87DE2C19CD45003503F5 /* OutgoingMessage.swift */,
 				FB6B87E22C19FFBD003503F5 /* InComingMessage.swift */,
 				FBC2D5E92C24E2DA0030F959 /* LocationManager.swift */,
+				FB4792FD2C2752EC0036FD79 /* MapAnnotation.swift */,
 				FBD48E212C245F0800517C19 /* MediaMessage */,
 				FBD48E1D2C2437ED00517C19 /* VideoEditor.swift */,
 			);
@@ -428,6 +431,7 @@
 				FBF639162C12EC0600CF6B03 /* UserTableViewCell.swift in Sources */,
 				FBC2D5EA2C24E2DA0030F959 /* LocationManager.swift in Sources */,
 				FB4B8F982C272803008FBD31 /* MapViewController.swift in Sources */,
+				FB4792FE2C2752EC0036FD79 /* MapAnnotation.swift in Sources */,
 				FBBD21FD2C0F202100DE96D1 /* User.swift in Sources */,
 				FBA262BF2C133100009E47DA /* ProfileTableViewController.swift in Sources */,
 				FB6B87E32C19FFBD003503F5 /* InComingMessage.swift in Sources */,
