@@ -68,6 +68,10 @@ class ChatViewController: MessagesViewController {
     //Listeners
     var notificationToken: NotificationToken?
     
+    var longPressGesture: UILongPressGestureRecognizer!
+    var audioFileName = ""
+    var audioDuration: Date!
+    
     //MARK: - Inits
     init(chatId: String = "", recipientId: String = "", recipientName: String = "") {
         
@@ -91,6 +95,7 @@ class ChatViewController: MessagesViewController {
         createTypingObserver()
         
         configureMessageCollectionView()
+        configureGestureRecognizer()
         configureMessageInputBar()
         
         configureLeftBarButton()
@@ -118,6 +123,14 @@ class ChatViewController: MessagesViewController {
         
     }
     
+    private func configureGestureRecognizer() {
+        
+        longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(recordAudio))
+        longPressGesture.minimumPressDuration = 0.5
+        longPressGesture.delaysTouchesBegan = true
+    }
+    
+    
     private func configureMessageInputBar(){
         
         messageInputBar.delegate = self
@@ -135,6 +148,7 @@ class ChatViewController: MessagesViewController {
         micButton.setSize(CGSize(width: 30, height: 30), animated: false)
         
         //add gesture recognizer
+        micButton.addGestureRecognizer(longPressGesture)
         
         messageInputBar.setStackViewItems([attachButton], forStack: .left, animated: false)
         
@@ -464,8 +478,33 @@ class ChatViewController: MessagesViewController {
 
         self.present(picker, animated: true, completion: nil)
     }
-
+    
+    //MARK: - AudioMessages
+    @objc func recordAudio(){
+        
+        switch longPressGesture.state {
+        case .began:
+            audioDuration = Date()
+            audioFileName = Date().stringDate()
+            //start recording
+            AudioRecorder.shared
+        case .ended:
+            
+            //stop recording
+            
+            if fileExistsAtPath(path: audioFileName + ".m4a") {
+                //send message
+            }else{
+                print("no audio file")
+            }
+            
+            audioFileName = ""
+        @unknown default:
+            print("unknown")
+        }
+        
     }
+}
 
 extension ChatViewController {
     func presentImagePicker() {

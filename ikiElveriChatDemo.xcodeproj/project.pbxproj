@@ -18,6 +18,7 @@
 		FB4670592C259C1400164255 /* LocationMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4670582C259C1400164255 /* LocationMessage.swift */; };
 		FB4792FE2C2752EC0036FD79 /* MapAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4792FD2C2752EC0036FD79 /* MapAnnotation.swift */; };
 		FB4B8F982C272803008FBD31 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4B8F972C272803008FBD31 /* MapViewController.swift */; };
+		FB4C19BF2C27DC3400428CF8 /* AudioRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4C19BE2C27DC3400428CF8 /* AudioRecorder.swift */; };
 		FB6B87C82C19B9D8003503F5 /* MessageDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6B87C72C19B9D8003503F5 /* MessageDataSource.swift */; };
 		FB6B87CB2C19BA14003503F5 /* MessageCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6B87CA2C19BA14003503F5 /* MessageCellDelegate.swift */; };
 		FB6B87CD2C19BA44003503F5 /* MessageDisplayDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6B87CC2C19BA44003503F5 /* MessageDisplayDelegate.swift */; };
@@ -93,6 +94,7 @@
 		FB4670582C259C1400164255 /* LocationMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationMessage.swift; sourceTree = "<group>"; };
 		FB4792FD2C2752EC0036FD79 /* MapAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapAnnotation.swift; sourceTree = "<group>"; };
 		FB4B8F972C272803008FBD31 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		FB4C19BE2C27DC3400428CF8 /* AudioRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecorder.swift; sourceTree = "<group>"; };
 		FB6B87C72C19B9D8003503F5 /* MessageDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageDataSource.swift; sourceTree = "<group>"; };
 		FB6B87CA2C19BA14003503F5 /* MessageCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCellDelegate.swift; sourceTree = "<group>"; };
 		FB6B87CC2C19BA44003503F5 /* MessageDisplayDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageDisplayDelegate.swift; sourceTree = "<group>"; };
@@ -290,6 +292,7 @@
 				FB6B87E22C19FFBD003503F5 /* InComingMessage.swift */,
 				FBC2D5E92C24E2DA0030F959 /* LocationManager.swift */,
 				FB4792FD2C2752EC0036FD79 /* MapAnnotation.swift */,
+				FB4C19BE2C27DC3400428CF8 /* AudioRecorder.swift */,
 				FBD48E212C245F0800517C19 /* MediaMessage */,
 				FBD48E1D2C2437ED00517C19 /* VideoEditor.swift */,
 			);
@@ -455,6 +458,7 @@
 				FB6B87DD2C19CA22003503F5 /* RealmManager.swift in Sources */,
 				FB6B87CF2C19BA5D003503F5 /* MessageLayoutDelegate.swift in Sources */,
 				FBA262C52C146396009E47DA /* StartChat.swift in Sources */,
+				FB4C19BF2C27DC3400428CF8 /* AudioRecorder.swift in Sources */,
 				FBBD22042C0F342300DE96D1 /* FirebaseUserListener.swift in Sources */,
 				FB7EF4102C0DF20A009EDC5D /* SceneDelegate.swift in Sources */,
 				FBA262C32C1352C8009E47DA /* RecentTableViewCell.swift in Sources */,
@@ -618,6 +622,7 @@
 				INFOPLIST_KEY_NSAppleMusicUsageDescription = "ikiElveriChatDemo would you like to use your media library";
 				INFOPLIST_KEY_NSCameraUsageDescription = "ikiElveriChatDemo would you like to use your camera";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "ikiElveriChatDemo would you like to use your location";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "$(PRODUCT_NAME) would like use your microphone";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "ikiElveriChatDemo would you like to use your photo library";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -652,6 +657,7 @@
 				INFOPLIST_KEY_NSAppleMusicUsageDescription = "ikiElveriChatDemo would you like to use your media library";
 				INFOPLIST_KEY_NSCameraUsageDescription = "ikiElveriChatDemo would you like to use your camera";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "ikiElveriChatDemo would you like to use your location";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "$(PRODUCT_NAME) would like use your microphone";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "ikiElveriChatDemo would you like to use your photo library";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
