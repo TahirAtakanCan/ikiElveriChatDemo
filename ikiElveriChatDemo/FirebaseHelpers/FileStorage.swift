@@ -224,6 +224,35 @@ class FileStorage {
         }
     }
     
+    
+    class func downloadAudio(audioLink: String, completion: @escaping (_ audioFileName: String) -> Void) {
+        
+        let audioFileName = fileNameFrom(fileUrl: audioLink) + ".m4a"
+        
+        if fileExistsAtPath(path: audioFileName) {
+            completion(audioFileName)
+        } else {
+            let downloadQueue = DispatchQueue(label: "AudioDownloadQueue", qos: .userInitiated)
+            
+            downloadQueue.async {
+                let data = NSData(contentsOf: URL(string: audioLink)!)
+                
+                if data != nil {
+                    
+                    //Save Locally
+                    FileStorage.saveFileLocally(fileData: data!, fileName: audioFileName)
+                    
+                    DispatchQueue.main.async {
+                        completion(audioFileName)
+                    }
+                }else {
+                    print("no document audio")
+                }
+                
+            }
+        }
+    }
+    
     //MARK: - Save Locally
     class func saveFileLocally(fileData: NSData, fileName: String) {
         

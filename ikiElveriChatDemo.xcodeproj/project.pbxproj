@@ -19,6 +19,7 @@
 		FB4792FE2C2752EC0036FD79 /* MapAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4792FD2C2752EC0036FD79 /* MapAnnotation.swift */; };
 		FB4B8F982C272803008FBD31 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4B8F972C272803008FBD31 /* MapViewController.swift */; };
 		FB4C19BF2C27DC3400428CF8 /* AudioRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4C19BE2C27DC3400428CF8 /* AudioRecorder.swift */; };
+		FB4C19C12C27EE9C00428CF8 /* AudioMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4C19C02C27EE9C00428CF8 /* AudioMessage.swift */; };
 		FB6B87C82C19B9D8003503F5 /* MessageDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6B87C72C19B9D8003503F5 /* MessageDataSource.swift */; };
 		FB6B87CB2C19BA14003503F5 /* MessageCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6B87CA2C19BA14003503F5 /* MessageCellDelegate.swift */; };
 		FB6B87CD2C19BA44003503F5 /* MessageDisplayDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6B87CC2C19BA44003503F5 /* MessageDisplayDelegate.swift */; };
@@ -95,6 +96,7 @@
 		FB4792FD2C2752EC0036FD79 /* MapAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapAnnotation.swift; sourceTree = "<group>"; };
 		FB4B8F972C272803008FBD31 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		FB4C19BE2C27DC3400428CF8 /* AudioRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecorder.swift; sourceTree = "<group>"; };
+		FB4C19C02C27EE9C00428CF8 /* AudioMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioMessage.swift; sourceTree = "<group>"; };
 		FB6B87C72C19B9D8003503F5 /* MessageDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageDataSource.swift; sourceTree = "<group>"; };
 		FB6B87CA2C19BA14003503F5 /* MessageCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCellDelegate.swift; sourceTree = "<group>"; };
 		FB6B87CC2C19BA44003503F5 /* MessageDisplayDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageDisplayDelegate.swift; sourceTree = "<group>"; };
@@ -318,6 +320,7 @@
 				FBDBD61A2C241C0900065039 /* PhotoMessage.swift */,
 				FBD48E1F2C245F0400517C19 /* VideoMessage.swift */,
 				FB4670582C259C1400164255 /* LocationMessage.swift */,
+				FB4C19C02C27EE9C00428CF8 /* AudioMessage.swift */,
 			);
 			path = MediaMessage;
 			sourceTree = "<group>";
@@ -421,6 +424,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FBA262C12C13494D009E47DA /* RecentChat.swift in Sources */,
+				FB4C19C12C27EE9C00428CF8 /* AudioMessage.swift in Sources */,
 				FB6B87DB2C19C261003503F5 /* LocalMessage.swift in Sources */,
 				FB094AED2C11F67800DD5923 /* GlobalFunctions.swift in Sources */,
 				FB6B87D12C19BA84003503F5 /* InputBarAccessoryDelegate.swift in Sources */,
