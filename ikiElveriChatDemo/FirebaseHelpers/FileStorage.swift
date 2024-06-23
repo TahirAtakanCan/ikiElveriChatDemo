@@ -142,7 +142,7 @@ class FileStorage {
                 let progress = snapshot.progress!.completedUnitCount / snapshot.progress!.totalUnitCount
                 //ProgressHUD.showProgress(CGFloat(progress))
             }
-        }
+    }
     
     class func downloadVideo(videoLink: String, completion: @escaping (_ isReadyToPlay: Bool, _ videoFileName: String) -> Void) {
         
@@ -175,7 +175,55 @@ class FileStorage {
             }
         }
     }
-
+    
+    //MARK: - Audio
+    class func uploadAudio(_ audioFileName: String, directory: String, completion: @escaping(_ audioLink: String?) -> Void) {
+            
+            let fileName = audioFileName + ".m4a"
+            let storageRef = storage.reference(forURL: kFILEREFERANCE).child(directory)
+            
+            var task: StorageUploadTask!
+        
+        if fileExistsAtPath(path: fileName) {
+            
+            if let audioData = NSData(contentsOfFile: fileInDocumentsDirectory(fileName: fileName)) {
+               
+                task = storageRef.putData(audioData as Data, metadata: nil, completion: { (metadata, error) in
+                    task.removeAllObservers()
+                    ProgressHUD.dismiss()
+                    
+                    if let error = error {
+                        print("Error uploading audio: \(error.localizedDescription)")
+                        completion(nil)
+                        return
+                    }
+                    
+                    storageRef.downloadURL { (url, error) in
+                        if let error = error {
+                            print("Error getting download URL: \(error.localizedDescription)")
+                            completion(nil)
+                            return
+                        }
+                        
+                        guard let downloadUrl = url else {
+                            completion(nil)
+                            return
+                        }
+                        
+                        completion(downloadUrl.absoluteString)
+                    }
+                })
+                
+                task.observe(StorageTaskStatus.progress) { (snapshot) in
+                    let progress = snapshot.progress!.completedUnitCount / snapshot.progress!.totalUnitCount
+                    //ProgressHUD.showProgress(CGFloat(progress))
+                }
+            } else {
+                print("nothing to upload (audio)")
+            }
+        }
+    }
+    
     //MARK: - Save Locally
     class func saveFileLocally(fileData: NSData, fileName: String) {
         
