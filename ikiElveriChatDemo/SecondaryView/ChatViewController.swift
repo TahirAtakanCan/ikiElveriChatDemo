@@ -487,13 +487,18 @@ class ChatViewController: MessagesViewController {
             audioDuration = Date()
             audioFileName = Date().stringDate()
             //start recording
-            AudioRecorder.shared
+            AudioRecorder.shared.startRecording(fileName: audioFileName)
         case .ended:
             
             //stop recording
+            AudioRecorder.shared.finishRecording()
             
             if fileExistsAtPath(path: audioFileName + ".m4a") {
+                
+                let audioD = audioDuration.interval(ofComponent: .second, from: Date())
                 //send message
+                messageSend(text: nil, photo: nil, video: nil, audio: audioFileName, location: nil, audioDuration: audioD)
+                
             }else{
                 print("no audio file")
             }

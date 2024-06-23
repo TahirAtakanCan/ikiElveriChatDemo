@@ -41,6 +41,10 @@ class OutgoingMessage {
             sendLocationMessage(message: message, memberIds: memberIds)
         }
         
+        if audio != nil {
+            print("send audio", audio, audioDuration)
+        }
+        
         FirebaseRecentListener.shared.updateRecents(chatRoomId: chatId, lastMessage: message.message)
     }
     
