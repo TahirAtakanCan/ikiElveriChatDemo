@@ -20,6 +20,7 @@
 		FB4B8F982C272803008FBD31 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4B8F972C272803008FBD31 /* MapViewController.swift */; };
 		FB4C19BF2C27DC3400428CF8 /* AudioRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4C19BE2C27DC3400428CF8 /* AudioRecorder.swift */; };
 		FB4C19C12C27EE9C00428CF8 /* AudioMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4C19C02C27EE9C00428CF8 /* AudioMessage.swift */; };
+		FB4C19C32C27F36600428CF8 /* BasicAudioController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4C19C22C27F36600428CF8 /* BasicAudioController.swift */; };
 		FB6B87C82C19B9D8003503F5 /* MessageDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6B87C72C19B9D8003503F5 /* MessageDataSource.swift */; };
 		FB6B87CB2C19BA14003503F5 /* MessageCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6B87CA2C19BA14003503F5 /* MessageCellDelegate.swift */; };
 		FB6B87CD2C19BA44003503F5 /* MessageDisplayDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6B87CC2C19BA44003503F5 /* MessageDisplayDelegate.swift */; };
@@ -97,6 +98,7 @@
 		FB4B8F972C272803008FBD31 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		FB4C19BE2C27DC3400428CF8 /* AudioRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecorder.swift; sourceTree = "<group>"; };
 		FB4C19C02C27EE9C00428CF8 /* AudioMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioMessage.swift; sourceTree = "<group>"; };
+		FB4C19C22C27F36600428CF8 /* BasicAudioController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicAudioController.swift; sourceTree = "<group>"; };
 		FB6B87C72C19B9D8003503F5 /* MessageDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageDataSource.swift; sourceTree = "<group>"; };
 		FB6B87CA2C19BA14003503F5 /* MessageCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCellDelegate.swift; sourceTree = "<group>"; };
 		FB6B87CC2C19BA44003503F5 /* MessageDisplayDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageDisplayDelegate.swift; sourceTree = "<group>"; };
@@ -295,6 +297,7 @@
 				FBC2D5E92C24E2DA0030F959 /* LocationManager.swift */,
 				FB4792FD2C2752EC0036FD79 /* MapAnnotation.swift */,
 				FB4C19BE2C27DC3400428CF8 /* AudioRecorder.swift */,
+				FB4C19C22C27F36600428CF8 /* BasicAudioController.swift */,
 				FBD48E212C245F0800517C19 /* MediaMessage */,
 				FBD48E1D2C2437ED00517C19 /* VideoEditor.swift */,
 			);
@@ -456,6 +459,7 @@
 				FB6B87CD2C19BA44003503F5 /* MessageDisplayDelegate.swift in Sources */,
 				FBDBD61B2C241C0900065039 /* PhotoMessage.swift in Sources */,
 				FB4670592C259C1400164255 /* LocationMessage.swift in Sources */,
+				FB4C19C32C27F36600428CF8 /* BasicAudioController.swift in Sources */,
 				FB6B87C82C19B9D8003503F5 /* MessageDataSource.swift in Sources */,
 				FB03F1D92C15BA8000A2CBBE /* ChatsTableViewController.swift in Sources */,
 				FB6B87E12C19E853003503F5 /* FirebaseMessageListener.swift in Sources */,

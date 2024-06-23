@@ -47,6 +47,8 @@ class ChatViewController: MessagesViewController {
     private var recipientId = ""
     private var recipientName = ""
     
+    open lazy var audioController = BasicAudioController(messageCollectionView: messagesCollectionView)
+    
     let currentUser = MKSender(senderId: User.currentId, displayName: User.currentUser!.username)
     
     let refreshController = UIRefreshControl()
@@ -105,6 +107,19 @@ class ChatViewController: MessagesViewController {
         loadChats()
         listenForNewChats()
         listenForReadStatusChange()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        FirebaseRecentListener.shared.resetRecentCounter(chatRoomId: chatId)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        FirebaseRecentListener.shared.resetRecentCounter(chatRoomId: chatId)
+        audioController.stopAnyOngoingPlaying()
     }
     
     
