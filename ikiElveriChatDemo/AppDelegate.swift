@@ -45,7 +45,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if !firstRun! {
             
-            let status = Status.array.map { $0.rawValue }
+            let status = Status.allCases.map { $0.rawValue }
             
             userDefaults.set(status,forKey: kSTATUS)
             userDefaults.set(true,forKey: kFIRSTRUN)
