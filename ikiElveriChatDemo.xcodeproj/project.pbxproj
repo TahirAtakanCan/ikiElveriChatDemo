@@ -15,6 +15,7 @@
 		FB094AE72C11063600DD5923 /* YPImagePicker in Frameworks */ = {isa = PBXBuildFile; productRef = FB094AE62C11063600DD5923 /* YPImagePicker */; };
 		FB094AEA2C11D02400DD5923 /* FileStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB094AE92C11D02400DD5923 /* FileStorage.swift */; };
 		FB094AED2C11F67800DD5923 /* GlobalFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB094AEC2C11F67800DD5923 /* GlobalFunctions.swift */; };
+		FB31AB922C294AB2003876FA /* ChannelsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB31AB912C294AB2003876FA /* ChannelsTableViewController.swift */; };
 		FB4670592C259C1400164255 /* LocationMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4670582C259C1400164255 /* LocationMessage.swift */; };
 		FB4792FE2C2752EC0036FD79 /* MapAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4792FD2C2752EC0036FD79 /* MapAnnotation.swift */; };
 		FB4B8F982C272803008FBD31 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4B8F972C272803008FBD31 /* MapViewController.swift */; };
@@ -93,6 +94,7 @@
 		FB094AE32C10FBBD00DD5923 /* EditProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileTableViewController.swift; sourceTree = "<group>"; };
 		FB094AE92C11D02400DD5923 /* FileStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileStorage.swift; sourceTree = "<group>"; };
 		FB094AEC2C11F67800DD5923 /* GlobalFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalFunctions.swift; sourceTree = "<group>"; };
+		FB31AB912C294AB2003876FA /* ChannelsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsTableViewController.swift; sourceTree = "<group>"; };
 		FB4670582C259C1400164255 /* LocationMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationMessage.swift; sourceTree = "<group>"; };
 		FB4792FD2C2752EC0036FD79 /* MapAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapAnnotation.swift; sourceTree = "<group>"; };
 		FB4B8F972C272803008FBD31 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -261,6 +263,7 @@
 			children = (
 				FBF639172C12EC2A00CF6B03 /* UsersTableViewController.swift */,
 				FB03F1D82C15BA8000A2CBBE /* ChatsTableViewController.swift */,
+				FB31AB912C294AB2003876FA /* ChannelsTableViewController.swift */,
 			);
 			path = MainView;
 			sourceTree = "<group>";
@@ -464,6 +467,7 @@
 				FB03F1D92C15BA8000A2CBBE /* ChatsTableViewController.swift in Sources */,
 				FB6B87E12C19E853003503F5 /* FirebaseMessageListener.swift in Sources */,
 				FB6B87DD2C19CA22003503F5 /* RealmManager.swift in Sources */,
+				FB31AB922C294AB2003876FA /* ChannelsTableViewController.swift in Sources */,
 				FB6B87CF2C19BA5D003503F5 /* MessageLayoutDelegate.swift in Sources */,
 				FBA262C52C146396009E47DA /* StartChat.swift in Sources */,
 				FB4C19BF2C27DC3400428CF8 /* AudioRecorder.swift in Sources */,
