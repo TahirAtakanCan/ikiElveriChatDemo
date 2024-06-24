@@ -24,7 +24,6 @@ class MapViewController: UIViewController {
         configureTitle()
     }
     
-    
     //MARK: - Configurations
     private func configureMapView(){
         mapView = MKMapView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height))
