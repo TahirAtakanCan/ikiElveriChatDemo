@@ -893,16 +893,16 @@
             </objects>
             <point key="canvasLocation" x="2078.6259541984732" y="-458.45070422535213"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Channels Table View Controller-->
         <scene sceneID="kns-ev-UCN">
             <objects>
-                <tableViewController id="IuO-Td-hBd" sceneMemberID="viewController">
+                <tableViewController id="IuO-Td-hBd" customClass="ChannelsTableViewController" customModule="ikiElveriChatDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="agr-Ir-j1S">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="tableviewBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="100" id="wnt-Kc-kSX">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" rowHeight="100" id="wnt-Kc-kSX" customClass="ChannelTableViewCell" customModule="ikiElveriChatDemo" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="50" width="393" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wnt-Kc-kSX" id="1fN-sz-j9B">
@@ -967,6 +967,13 @@
                                         <constraint firstAttribute="trailing" secondItem="Atj-Eq-c00" secondAttribute="trailing" constant="7" id="yst-5L-IJS"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="aboutLabel" destination="rq4-Pd-AXP" id="aPV-t0-o32"/>
+                                    <outlet property="avatarImageView" destination="c8e-6h-PXr" id="gEz-il-zo0"/>
+                                    <outlet property="lastMessageDate" destination="Atj-Eq-c00" id="mw5-NC-LU3"/>
+                                    <outlet property="memberCountLabel" destination="8jS-9M-8e4" id="wjs-vK-Vrj"/>
+                                    <outlet property="nameLabel" destination="akm-G8-RGS" id="XhD-eQ-ruc"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -983,9 +990,15 @@
                                 <segment title="Subscribed"/>
                                 <segment title="All Channels"/>
                             </segments>
+                            <connections>
+                                <action selector="channelSegmentValueChanged:" destination="IuO-Td-hBd" eventType="valueChanged" id="3dZ-91-0Da"/>
+                            </connections>
                         </segmentedControl>
                         <barButtonItem key="rightBarButtonItem" image="person.2.crop.square.stack.fill" catalog="system" id="p9R-ns-fkZ"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="channelSegmentOutlet" destination="iZz-Vc-2Mt" id="ZSb-42-hPv"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J17-BB-TG1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
