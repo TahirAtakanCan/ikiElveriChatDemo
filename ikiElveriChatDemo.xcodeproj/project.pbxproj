@@ -72,6 +72,7 @@
 		FBD48E1E2C2437ED00517C19 /* VideoEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD48E1D2C2437ED00517C19 /* VideoEditor.swift */; };
 		FBD48E202C245F0400517C19 /* VideoMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD48E1F2C245F0400517C19 /* VideoMessage.swift */; };
 		FBDBD61B2C241C0900065039 /* PhotoMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDBD61A2C241C0900065039 /* PhotoMessage.swift */; };
+		FBDD48582C2B44A80006C17B /* ChannelTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDD48572C2B44A80006C17B /* ChannelTableViewController.swift */; };
 		FBDFF35B2C123DDF00D82522 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDFF35A2C123DDF00D82522 /* Extensions.swift */; };
 		FBDFF35D2C12408900D82522 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDFF35C2C12408900D82522 /* Status.swift */; };
 		FBDFF35F2C12435100D82522 /* StatusTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDFF35E2C12435100D82522 /* StatusTableViewController.swift */; };
@@ -147,6 +148,7 @@
 		FBD48E1D2C2437ED00517C19 /* VideoEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoEditor.swift; sourceTree = "<group>"; };
 		FBD48E1F2C245F0400517C19 /* VideoMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VideoMessage.swift; path = ../VideoMessage.swift; sourceTree = "<group>"; };
 		FBDBD61A2C241C0900065039 /* PhotoMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PhotoMessage.swift; path = ../PhotoMessage.swift; sourceTree = "<group>"; };
+		FBDD48572C2B44A80006C17B /* ChannelTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelTableViewController.swift; sourceTree = "<group>"; };
 		FBDFF35A2C123DDF00D82522 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		FBDFF35C2C12408900D82522 /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		FBDFF35E2C12435100D82522 /* StatusTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusTableViewController.swift; sourceTree = "<group>"; };
@@ -295,6 +297,7 @@
 				FB03F1DA2C15CB6F00A2CBBE /* ChatViewController.swift */,
 				FB3EFDA62C2A913800694474 /* MyChannelsTableViewController.swift */,
 				FB3EFDA82C2A914F00694474 /* AddChannelTableViewController.swift */,
+				FBDD48572C2B44A80006C17B /* ChannelTableViewController.swift */,
 				FB6B87C92C19B9F4003503F5 /* ChatViewExtensions */,
 			);
 			path = SecondaryView;
@@ -451,6 +454,7 @@
 				FB094AED2C11F67800DD5923 /* GlobalFunctions.swift in Sources */,
 				FB6B87D12C19BA84003503F5 /* InputBarAccessoryDelegate.swift in Sources */,
 				FBBD22012C0F29AB00DE96D1 /* FCollectionReference.swift in Sources */,
+				FBDD48582C2B44A80006C17B /* ChannelTableViewController.swift in Sources */,
 				FBA262C72C146799009E47DA /* FirebaseRecentListener.swift in Sources */,
 				FBF639182C12EC2A00CF6B03 /* UsersTableViewController.swift in Sources */,
 				FB6B87D32C19BCCF003503F5 /* MessageKitDefaults.swift in Sources */,
