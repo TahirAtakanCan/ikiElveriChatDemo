@@ -22,9 +22,13 @@ class ChannelsTableViewController: UITableViewController {
         navigationItem.largeTitleDisplayMode = .always
         self.title = "Channel"
         
+        self.refreshControl = UIRefreshControl()
+        self.tableView.refreshControl = self.refreshControl
+        
         tableView.tableFooterView = UIView()
         
-        downloadChannels()
+        downloadAllChannels()
+        downloadSubscribedChannels()
     }
 
     // MARK: - Table view data source
@@ -43,23 +47,50 @@ class ChannelsTableViewController: UITableViewController {
         return cell
     }
     
+    
+    //MARK: - IBActions
     @IBAction func channelSegmentValueChanged(_ sender: Any) {
         tableView.reloadData()
     }
     
-    private func downloadChannels() {
+    
+    //MARK: - Download Channels
+    private func downloadAllChannels() {
         
         FirebaseChannelListener.shared.downloadAllChannels { (allChannels) in
             
             self.allChannels = allChannels
             
+            if self.channelSegmentOutlet.selectedSegmentIndex == 1 {
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            }
         }
-        
-        FirebaseChannelListener.shared.downloadSubscribedChannels { (subscribedChannels) in
-            
-            self.subscribedChannels = subscribedChannels
-            
-        }
-        
     }
+    
+    private func downloadSubscribedChannels() {
+        
+            FirebaseChannelListener.shared.downloadSubscribedChannels { (subscribedChannels) in
+                
+                self.subscribedChannels = subscribedChannels
+                
+                
+                if self.channelSegmentOutlet.selectedSegmentIndex == 0 {
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
+                }
+            }
+    }
+    
+    //MARK: - UIScrollViewDelegate
+    override func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        
+        if self.refreshControl!.isRefreshing {
+            self.downloadAllChannels()
+            self.refreshControl!.endRefreshing()
+        }
+    }
+    
 }
