@@ -108,9 +108,10 @@ class ChannelsTableViewController: UITableViewController {
     //MARK: - Navigation
     private func showChannelView(channel: Channel) {
         
-        let channelVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "channelView") as! ChannelTableViewController
-        channelVC.channel = channel
+        let channelVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "channelView") as! ChannelDetailTableViewController
         
+        channelVC.channel = channel
+        channelVC.delegate = self
         self.navigationController?.pushViewController(channelVC, animated: true)
     }
     
@@ -118,4 +119,11 @@ class ChannelsTableViewController: UITableViewController {
         print("chat of channel",channel.name)
     }
     
+}
+
+extension ChannelsTableViewController : ChannelDetailTableViewControllerDelegate {
+    func didClickFollow() {
+        
+        self.downloadAllChannels()
+    }
 }

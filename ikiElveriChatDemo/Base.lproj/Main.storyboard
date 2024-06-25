@@ -1211,10 +1211,10 @@
             </objects>
             <point key="canvasLocation" x="4962.5954198473282" y="-458.45070422535213"/>
         </scene>
-        <!--Channel Table View Controller-->
+        <!--Channel Detail Table View Controller-->
         <scene sceneID="Yn0-qn-Vxb">
             <objects>
-                <tableViewController storyboardIdentifier="channelView" id="eFQ-DH-ZxX" customClass="ChannelTableViewController" customModule="ikiElveriChatDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="channelView" id="eFQ-DH-ZxX" customClass="ChannelDetailTableViewController" customModule="ikiElveriChatDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="Dru-nC-U4o">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
