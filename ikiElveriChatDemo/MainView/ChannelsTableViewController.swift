@@ -23,6 +23,8 @@ class ChannelsTableViewController: UITableViewController {
         self.title = "Channel"
         
         tableView.tableFooterView = UIView()
+        
+        downloadChannels()
     }
 
     // MARK: - Table view data source
@@ -36,12 +38,28 @@ class ChannelsTableViewController: UITableViewController {
         
         let channel = channelSegmentOutlet.selectedSegmentIndex == 0 ? subscribedChannels[indexPath.row] : allChannels[indexPath.row]
         
+        cell.configure(channel: channel)
+        
         return cell
     }
     
     @IBAction func channelSegmentValueChanged(_ sender: Any) {
-        
+        tableView.reloadData()
     }
     
-    
+    private func downloadChannels() {
+        
+        FirebaseChannelListener.shared.downloadAllChannels { (allChannels) in
+            
+            self.allChannels = allChannels
+            
+        }
+        
+        FirebaseChannelListener.shared.downloadSubscribedChannels { (subscribedChannels) in
+            
+            self.subscribedChannels = subscribedChannels
+            
+        }
+        
+    }
 }

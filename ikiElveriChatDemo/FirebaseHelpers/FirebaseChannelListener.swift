@@ -37,10 +37,10 @@ class FirebaseChannelListener {
         })
     }
     
-    /*
+    
     func downloadSubscribedChannels(completion: @escaping (_ allChannels: [Channel]) ->Void) {
         
-        channelListener = FirebaseReference(.Channel).whereField(kMEMBER, arrayContains: User.currentId).addSnapshotListener({ (querySnapshot, error) in
+        channelListener = FirebaseReference(.Channel).whereField(kMEMBERIDS, arrayContains: User.currentId).addSnapshotListener({ (querySnapshot, error) in
             
             
             guard let documents = querySnapshot?.documents else {
@@ -56,7 +56,7 @@ class FirebaseChannelListener {
             allChannels.sort(by: { $0.memberIds.count > $1.memberIds.count })
             completion(allChannels)
         })
-    }*/
+    }
     
     func downloadAllChannels(completion: @escaping (_ allChannels: [Channel]) ->Void) {
         
