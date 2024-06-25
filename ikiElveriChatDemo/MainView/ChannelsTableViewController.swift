@@ -59,6 +59,29 @@ class ChannelsTableViewController: UITableViewController {
         }
     }
     
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        if channelSegmentOutlet.selectedSegmentIndex == 1 {
+            return false
+        } else {
+            return subscribedChannels[indexPath.row].adminId != User.currentId
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+                    
+            var channelToUnfollow = subscribedChannels[indexPath.row]
+            subscribedChannels.remove(at: indexPath.row)
+            
+                if let index = channelToUnfollow.memberIds.firstIndex(of: User.currentId) {
+                channelToUnfollow.memberIds.remove(at: index)
+            }
+            
+            FirebaseChannelListener.shared.saveCannel(channelToUnfollow)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+    }
+    
     
     //MARK: - IBActions
     @IBAction func channelSegmentValueChanged(_ sender: Any) {
