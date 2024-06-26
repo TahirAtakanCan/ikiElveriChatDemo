@@ -53,6 +53,7 @@
 		FB7EF4472C0E03AD009EDC5D /* SKPhotoBrowser in Frameworks */ = {isa = PBXBuildFile; productRef = FB7EF4462C0E03AD009EDC5D /* SKPhotoBrowser */; };
 		FB7EF44A2C0E041B009EDC5D /* MessageKit in Frameworks */ = {isa = PBXBuildFile; productRef = FB7EF4492C0E041B009EDC5D /* MessageKit */; };
 		FB7EF44D2C0E0450009EDC5D /* InputBarAccessoryView in Frameworks */ = {isa = PBXBuildFile; productRef = FB7EF44C2C0E0450009EDC5D /* InputBarAccessoryView */; };
+		FB8449A32C2BF39200D7BE6F /* ChannelChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8449A22C2BF39200D7BE6F /* ChannelChatViewController.swift */; };
 		FB9773392C1F387B00EB03D4 /* FirebaseTypingListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9773382C1F387B00EB03D4 /* FirebaseTypingListener.swift */; };
 		FBA262BF2C133100009E47DA /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA262BE2C133100009E47DA /* ProfileTableViewController.swift */; };
 		FBA262C12C13494D009E47DA /* RecentChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA262C02C13494D009E47DA /* RecentChat.swift */; };
@@ -130,6 +131,7 @@
 		FB7EF4192C0DF20C009EDC5D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FB7EF41B2C0DF20C009EDC5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FB7EF4212C0DF230009EDC5D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FB8449A22C2BF39200D7BE6F /* ChannelChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelChatViewController.swift; sourceTree = "<group>"; };
 		FB9773382C1F387B00EB03D4 /* FirebaseTypingListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseTypingListener.swift; sourceTree = "<group>"; };
 		FBA262BE2C133100009E47DA /* ProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
 		FBA262C02C13494D009E47DA /* RecentChat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentChat.swift; sourceTree = "<group>"; };
@@ -295,6 +297,7 @@
 				FBA262BE2C133100009E47DA /* ProfileTableViewController.swift */,
 				FB4B8F972C272803008FBD31 /* MapViewController.swift */,
 				FB03F1DA2C15CB6F00A2CBBE /* ChatViewController.swift */,
+				FB8449A22C2BF39200D7BE6F /* ChannelChatViewController.swift */,
 				FB3EFDA62C2A913800694474 /* MyChannelsTableViewController.swift */,
 				FB3EFDA82C2A914F00694474 /* AddChannelTableViewController.swift */,
 				FBDD48572C2B44A80006C17B /* ChannelDetailTableViewController.swift */,
@@ -489,6 +492,7 @@
 				FB03F1D92C15BA8000A2CBBE /* ChatsTableViewController.swift in Sources */,
 				FB6B87E12C19E853003503F5 /* FirebaseMessageListener.swift in Sources */,
 				FBCC90BB2C2A054F00300939 /* ChannelTableViewCell.swift in Sources */,
+				FB8449A32C2BF39200D7BE6F /* ChannelChatViewController.swift in Sources */,
 				FB6B87DD2C19CA22003503F5 /* RealmManager.swift in Sources */,
 				FBCC90B72C2A01E500300939 /* ChannelsTableViewController.swift in Sources */,
 				FB6B87CF2C19BA5D003503F5 /* MessageLayoutDelegate.swift in Sources */,
