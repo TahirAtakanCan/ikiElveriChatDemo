@@ -267,9 +267,10 @@ class ChannelChatViewController: MessagesViewController {
     //MARK: - Actions
     
     func messageSend(text: String?, photo: UIImage?, video: Video?, audio: String?, location: String?, audioDuration: Float = 0.0) {
-            print("Photo: \(String(describing: photo))")
-            OutgoingMessage.send(chatId: chatId, text: text, photo: photo, video: video, audio: audio, audioDuration: audioDuration, location: location, memberIds: [User.currentId, recipientId])
-        }
+            
+        OutgoingMessage.sendChannel(channel: channel, text: text, photo: photo, video: video, audio: audio, audioDuration: audioDuration, location: location)
+            
+    }
     
     @objc func backButtonPressed(){
         FirebaseRecentListener.shared.resetRecentCounter(chatRoomId: chatId)

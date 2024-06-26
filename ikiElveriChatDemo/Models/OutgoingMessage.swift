@@ -48,6 +48,45 @@ class OutgoingMessage {
         FirebaseRecentListener.shared.updateRecents(chatRoomId: chatId, lastMessage: message.message)
     }
     
+    class func sendChannel(channel: Channel, text: String?, photo: UIImage?, video: Video?, audio: String?, audioDuration: Float = 0.0, location: String?) {
+        
+        let currentUser = User.currentUser!
+        var channel = channel
+        
+        let message = LocalMessage()
+        message.id = UUID().uuidString
+        message.chatRoomId = channel.id
+        message.senderId = currentUser.id
+        message.senderName = currentUser.username
+        message.senderinitials = String(currentUser.username.first!)
+        message.date = Date()
+        message.status = kSENT
+        
+        if  text != nil {
+            sendTextMessage(message: message, text: text!, memberIds: channel.memberIds, channel: channel)
+        }
+        
+        if  photo != nil {
+            sendPictureMessage(message: message, photo: photo!, memberIds: channel.memberIds, channel: channel)
+        }
+        
+        if  video != nil {
+            sendVideoMessage(message: message, video: video!, memberIds: channel.memberIds, channel: channel)
+        }
+        
+        if  location != nil {
+            sendLocationMessage(message: message, memberIds: channel.memberIds, channel: channel)
+        }
+        
+        if audio != nil {
+            sendAudioMessage(message: message, audioFileName: audio!, audioDuration: audioDuration, memberIds: channel.memberIds, channel: channel)
+        }
+        
+        channel.lastMessageDate = Date()
+        FirebaseChannelListener.shared.saveCannel(channel)
+    
+    }
+    
     class func sendMessage(message: LocalMessage, memberIds: [String]) {
         
         RealmManager.shared.saveToRealm(message)
@@ -57,13 +96,25 @@ class OutgoingMessage {
         }
     }
     
-    class func sendTextMessage(message: LocalMessage, text: String, memberIds: [String]) {
+    class func sendChannelMessage(message: LocalMessage, channel: Channel) {
+        
+        RealmManager.shared.saveToRealm(message)
+        FirebaseMessageListener.shared.addChannelMessage(message, channel: channel)
+    }
+    
+    class func sendTextMessage(message: LocalMessage, text: String, memberIds: [String], channel: Channel? = nil) {
         message.message = text
         message.type = kTEXT
-        sendMessage(message: message, memberIds: memberIds)
+        
+        if channel != nil {
+            OutgoingMessage.sendChannelMessage(message: message, channel: channel!)
+        }else{
+            OutgoingMessage.sendMessage(message: message, memberIds: memberIds)
+        }
+        
     }
 
-    class func sendPictureMessage(message: LocalMessage, photo: UIImage, memberIds: [String]) {
+    class func sendPictureMessage(message: LocalMessage, photo: UIImage, memberIds: [String], channel: Channel? = nil) {
         print("sending picture message")
         message.message = "Picture Message"
         message.type = kPHOTO
@@ -77,14 +128,18 @@ class OutgoingMessage {
             if let imageURL = imageURL {
                 message.pictureUrl = imageURL
                 print("Image URL: \(imageURL)")
-                sendMessage(message: message, memberIds: memberIds)
+                if channel != nil {
+                    OutgoingMessage.sendChannelMessage(message: message, channel: channel!)
+                }else{
+                    OutgoingMessage.sendMessage(message: message, memberIds: memberIds)
+                }
             } else {
                 print("Image URL is nil")
             }
         }
     }
 
-    class func sendVideoMessage(message: LocalMessage, video: Video, memberIds: [String]) {
+    class func sendVideoMessage(message: LocalMessage, video: Video, memberIds: [String], channel: Channel? = nil) {
         message.message = "Video Message"
         message.type = kVIDEO
         
@@ -110,7 +165,11 @@ class OutgoingMessage {
                             message.pictureUrl = imageLink
                             message.videoUrl = videoLink ?? ""
                             
-                            sendMessage(message: message, memberIds: memberIds)
+                            if channel != nil {
+                                OutgoingMessage.sendChannelMessage(message: message, channel: channel!)
+                            }else{
+                                OutgoingMessage.sendMessage(message: message, memberIds: memberIds)
+                            }
                         }
                     }
                 }
@@ -118,18 +177,22 @@ class OutgoingMessage {
         }
     }
     
-    class func sendLocationMessage(message: LocalMessage, memberIds: [String]) {
+    class func sendLocationMessage(message: LocalMessage, memberIds: [String], channel: Channel? = nil) {
         let currentLocation = LocationManager.shared.currentLocation
         message.message = "Location Message"
         message.type = kLOCATION
         message.latitude = currentLocation?.latitude ?? 0.0
         message.longitude = currentLocation?.longitude ?? 0.0
         
-        OutgoingMessage.sendMessage(message: message, memberIds: memberIds)
+        if channel != nil {
+            OutgoingMessage.sendChannelMessage(message: message, channel: channel!)
+        }else{
+            OutgoingMessage.sendMessage(message: message, memberIds: memberIds)
+        }
     }
     
     
-    class func sendAudioMessage(message: LocalMessage, audioFileName: String, audioDuration: Float, memberIds: [String]) {
+    class func sendAudioMessage(message: LocalMessage, audioFileName: String, audioDuration: Float, memberIds: [String], channel: Channel? = nil) {
         
         message.message = "Audio Message"
         message.type = kAUDIO
@@ -143,7 +206,11 @@ class OutgoingMessage {
                 message.audioUrl = audioUrl!
                 message.audioDuration = Double(audioDuration)
                 
-                OutgoingMessage.sendMessage(message: message, memberIds: memberIds)
+                if channel != nil {
+                    OutgoingMessage.sendChannelMessage(message: message, channel: channel!)
+                }else{
+                    OutgoingMessage.sendMessage(message: message, memberIds: memberIds)
+                }
             }
         }
     }
